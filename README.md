@@ -21,9 +21,9 @@
 |    :---:     |     :---:     |     :---:       |
 | James Apisit Giatpaiboon      |               |   jgiatpaiboon              |
 | Mohammad Hamza Khan      |        mkhan7@mail.sfsu.edu       |   mk1159   |
-| Ana Darlinda Navarro      |    anavarro16@mail.sfsu.edu               |   anniednavarro              |
-| Andy Ouyang      |     aouyang@mail.sfsu.edu          |        andyouy         |
+| Ana Darlinda Navarro      |               |   anniednavarro              |
+| Andy Ouyang      |               |                 |andyouy
 | Courtney Radford      |               |                 |
-| Jagjot Singh Saggar      |               |  jaguarsaggar               | 
+| Jagjot Singh Saggar      | jsaggar@mail.sfsu.edu        |  jaguarsaggar               | 
 
 ## NO code needs to be stored in the root of your repository. You may rename the application folder if you like to your team's application name. But all source code related to your team's application should be stored inside the application folder.
