@@ -19,7 +19,7 @@
 
 | Student Name | Student Email | GitHub Username |
 |    :---:     |     :---:     |     :---:       |
-| James Apisit Giatpaiboon      |               |   jgiatpaiboon              |
+| James Apisit Giatpaiboon      | jgiatpaiboon@mail.sfsu.edu              |   jgiatpaiboon              |
 | Mohammad Hamza Khan      |        mkhan7@mail.sfsu.edu       |   mk1159   |
 | Ana Darlinda Navarro      |               |   anniednavarro              |
 | Andy Ouyang      |               |                 |andyouy
