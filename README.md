@@ -22,7 +22,7 @@
 | James Apisit Giatpaiboon      | jgiatpaiboon@mail.sfsu.edu              |   jgiatpaiboon              |
 | Mohammad Hamza Khan      |        mkhan7@mail.sfsu.edu       |   mk1159   |
 | Ana Darlinda Navarro      |    anavarro16@mail.sfsu.edu           |   anniednavarro              |
-| Andy Ouyang      |               |                 |andyouy
+| Andy Ouyang      |    aouyang@mail.sfsu.edu       |        andyouy         |
 | Courtney Radford      |  cradford1@mail.sfsu.edu  |     csr5321      |
 | Jagjot Singh Saggar      | jsaggar@mail.sfsu.edu        |  jaguarsaggar               | 
 
