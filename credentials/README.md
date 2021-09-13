@@ -38,6 +38,8 @@
 **ssh -i "csc648team5-server2.pem" ec2-user@ec2-54-185-147-128.us-west-2.compute.amazonaws.com**
 
 
+### Database Access:
+This is a MySQL database (Version ​​8.0.21) built with Amazon RDS. It is linked to the EC2 server above via a shared VPC configuration. To connect to the database, install MySQL Workbench (preferably any version about 8.0.20) and ‘create connection’. For the connection method, select standard TCP/IP over SSH, fill in the information above. There is no SSH Password (empty). SSH Key file is used instead which is linked above in the credentials folder of the repository. Also see Milestone 0 submission for a detailed illustration to fill in credentials if need be.
 
 
 
