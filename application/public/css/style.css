@@ -1,17 +1,17 @@
+
 body {
     background-color: lightgray;
     font-family: sans-serif;
-}
-
-h1   {
-    color: black;
     text-align: center;
-    
+    color: white;
+
 }
 
-
-h2  {
-    font-size:xx-large;
+h2 {
+    text-align: left;
 }
 
-p   {text-align: left;}
+p   {
+    text-align: left;
+    color: darkgray;
+}
