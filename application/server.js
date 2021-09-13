@@ -4,8 +4,8 @@ var bodyParser = require('body-parser');
 var logger = require('morgan');
 var mongoose = require('mongoose');
 
-//Require History Schema
-// var Article = require('./models/article.js');
+//Require History Schema 
+// var Article = require('./models/<filename>.js');
 
 // Create Instance of Express
 var app = express();
