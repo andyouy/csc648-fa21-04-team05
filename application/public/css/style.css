@@ -15,3 +15,8 @@ p   {
     text-align: left;
     color: darkgray;
 }
+
+img{
+    max-width: 10em;
+    height: auto;
+}
