@@ -7,3 +7,8 @@ You are free to organize the contents of the folder as you see fit. But remember
 
 ## Please use the rest of the README.md to store important information for your team's application.
 
+
+## Run Instructions for Dev Team
+1. Clone repository and navigate to "application" folder.
+2. $ yarn add react
+3. $ yarn start
