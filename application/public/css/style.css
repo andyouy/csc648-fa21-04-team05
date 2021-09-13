@@ -17,6 +17,7 @@ p   {
 }
 
 img{
-    max-width: 10em;
+    max-width: 12em;
     height: auto;
+    border-radius: 1em;
 }

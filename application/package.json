@@ -1,7 +1,7 @@
 {
   "name": "react-example",
   "version": "1.0.0",
-  "description": "Mongo, Express, Node and React",
+  "description": "Mongo, Express, React and Node",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -11,8 +11,8 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^0.21.4",
-    "body-parser": "^1.15.2",
-    "core-js": "^2.4.0",
+    "body-parser": "^1.19.0",
+    "core-js": "^3.6.5",
     "express": "^4.14.0",
     "mongoose": "^6.0.5",
     "morgan": "^1.7.0",
