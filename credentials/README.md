@@ -18,6 +18,18 @@
 7. Database name (basically the name that contains all your tables)
 8. Instructions on how to use the above information.
 
+
+|     Item     | Credentials     |
+|    :---:         |     :---:     |
+|  Website URL | http:/ec2-54-185-147-128.us-west-2.compute.amazonaws.com |
+| SSH URL | ec2-user |
+| SSH Password/Key | csc648team5-server2.pem file under Github Repo/Credentials: https://github.com/CSC-648-SFSU/csc648-fa21-04-team05/tree/master/credentials |
+|Database URL | csc648team5.cx1pe5n2rnmb.us-west-2.rds.amazonaws.com|
+| Database Username | csc648team5admin |
+|Database Password  | csc648team5admin |
+
+
+
 # Most important things to Remember
 ## These values need to kept update to date throughout the semester. <br>
 ## <strong>Failure to do so will result it points be deducted from milestone submissions.</strong><br>
