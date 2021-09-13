@@ -1,6 +1,6 @@
 # csc648 Repository
 
-## Please when ready add your teams application URL or IP to the repository description. This will help with grading. Teams are expected to keep this value up to date.
+## Application URL: ec2-54-185-147-128.us-west-2.compute.amazonaws.com 
 
 ## Please do the following steps before completing Milestone 0.
 1. Change the name of the repository of csc648-fa21-SectionName-teamNN. 
