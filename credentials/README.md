@@ -21,12 +21,12 @@
 
 |     Item     | Credentials     |
 |    :---:         |     :---:     |
-|  Website URL | http:/ec2-54-185-147-128.us-west-2.compute.amazonaws.com |
-| SSH URL | ec2-user |
-| SSH Password/Key | csc648team5-server2.pem file under Github Repo/Credentials: https://github.com/CSC-648-SFSU/csc648-fa21-04-team05/tree/master/credentials |
-|Database URL | csc648team5.cx1pe5n2rnmb.us-west-2.rds.amazonaws.com|
-| Database Username | csc648team5admin |
-|Database Password  | csc648team5admin |
+|  Website URL | http://ec2-54-183-209-129.us-west-1.compute.amazonaws.com/ |
+| SSH Username | ubuntu |
+| SSH Password/Key | csc648new.pem file under Github Repo/Credentials: https://github.com/CSC-648-SFSU/csc648-fa21-04-team05/tree/master/credentials |
+|Database URL | csc648db.clbgfu5wxlpu.us-west-1.rds.amazonaws.com |
+| Database Username | csc648team5 |
+|Database Password  | csc648team5 |
 
 
 ### SSH into EC2 server (Amazon Linux 2 AMI, changed from Ubuntu because of EC2 support options and free pricing):
