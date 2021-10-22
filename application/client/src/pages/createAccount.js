@@ -10,9 +10,9 @@ function CreateAccount () {
     const [email, setEmail] = useState('');
     const [userID, setUserID] = useState('');
     const [password, setPassword] = useState('');
-
+    
     const submitHandler = async (e) => {
-        await axios.post(`/newAccount`, {
+        await axios.post('/newAccount', {
           fullName,
           email,
           userID,
@@ -20,6 +20,19 @@ function CreateAccount () {
         });
     }
     
+    const [users, setUsers] = useState("");
+
+    const getUsers = () => {
+        axios.get('/getAllUsers')
+        .then((response) => {
+            console.log(response);
+            const listOfUsers = response.data;
+            setUsers(listOfUsers)
+        })
+    }
+
+    useEffect(() => getUsers(), [])
+
     return (
 
     <form onSubmit={submitHandler}>
@@ -62,13 +75,17 @@ function CreateAccount () {
             placeholder='Password'
             type='password'
             value={password}
-            onChange={e => setUserID(e.target.value)}
+            onChange={e => setPassword(e.target.value)}
             />
         </label>
         <button>Create Account</button>
-    
+        <br/>
+        
+        <h1>Simple Get Request From Database</h1>
+        <div>{JSON.stringify(users)}</div>
         </form>
-    
+
+
     );
 }
 

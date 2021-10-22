@@ -12,6 +12,7 @@ import login from './pages/login';
 
 function App() {
   return (
+
     <div className="App">
     <h1> Shyft </h1>
  
@@ -19,10 +20,11 @@ function App() {
       <Navbar />
       <Switch>
         <Route path='/' exact component={Home} />
-        <Route path='/aboutUs' component={aboutUs}/>
-        <Route path='/createAccount' component={createAccount}/>
+        <Route path='/aboutUs' exact component={aboutUs}/>
+        <Route path='/createAccount' exact component={createAccount}/>
         <Route path='/login' component={login}/>
       </Switch>
+
     </Router>
     </div>
   );
