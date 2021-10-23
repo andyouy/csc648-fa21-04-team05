@@ -3,7 +3,7 @@ const router = express.Router();
 
 const db = require('../config/database');
 
-router.post('/newAccount', (req, res, next) => { 
+router.post('/api/newAccount', (req, res, next) => { 
    
     console.log(req.body);
     console.log("test")
@@ -25,7 +25,7 @@ router.post('/newAccount', (req, res, next) => {
      })
  })
 
- router.get('/getAllUsers', (req, res, next) => {
+ router.get('/api/getAllUsers', (req, res, next) => {
     console.log("working");
     let baseSQL = 'SELECT * from user';
     db.query(baseSQL).then(([results, fields]) => {

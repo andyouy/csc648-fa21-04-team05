@@ -12,7 +12,7 @@ function CreateAccount () {
     const [password, setPassword] = useState('');
     
     const submitHandler = async (e) => {
-        await axios.post('/newAccount', {
+        await axios.post('/api/newAccount', {
           fullName,
           email,
           userID,
@@ -23,7 +23,7 @@ function CreateAccount () {
     const [users, setUsers] = useState("");
 
     const getUsers = () => {
-        axios.get('/getAllUsers')
+        axios.get('/api/getAllUsers')
         .then((response) => {
             console.log(response);
             const listOfUsers = response.data;
