@@ -35,7 +35,7 @@
 - Locate your private key file. The key used to launch this instance is **csc648new.pem**
 - Run this command, if necessary, to ensure your key is not publicly viewable: **chmod 400 csc648new.pem**
 - Connect to your instance using its Public DNS (make sure the path to .pem file is correct, ours was in the same directory when using terminal):  
-**ssh -i "csc648new.pem" ec2-user@ec2-54-185-147-128.us-west-2.compute.amazonaws.com**
+**ssh -i "csc648new.pem" ubuntu@ec2-54-183-209-129.us-west-1.compute.amazonaws.com**
 
 
 ### Database Access:
