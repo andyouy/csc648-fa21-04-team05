@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import {  useHistory } from "react-router-dom";
 import './createAccount.css';
 
 import axios from 'axios';
@@ -10,20 +11,43 @@ function CreateAccount () {
     const [email, setEmail] = useState('');
     const [userID, setUserID] = useState('');
     const [password, setPassword] = useState('');
+    const [confirmPassword, setConfirmPassword] = useState('');
+
+    let history = useHistory();
     
-    const submitHandler = async (e) => {
-        await axios.post('/newAccount', {
+    const submitHandler = (e) => {
+        e.preventDefault();
+
+        axios.post('/api/newAccount', {
           fullName,
           email,
           userID,
           password,
-        });
+          confirmPassword,
+        }, {withCredentials:true})
+        .then(response => {
+            if(response.data === "Successfully created") {
+                history.push('/')
+            }
+        })
+        .catch(error => {
+            console.log(error);
+            if(error.response.data === "Passwords do not match") {
+                console.log("passwords do not match")
+            } else if(error.response.data === "Password must contain certain values"){
+                console.log("passwords needs 1 Capital letter, 1 number, and 1 special character")
+            } else if(error.response.data === "Username is already taken") {
+                console.log("Username is already taken")
+            } else if(error.response.data === "Account already exists") {
+                console.log("Email already in use")
+            }
+        })
     }
     
     const [users, setUsers] = useState("");
 
     const getUsers = () => {
-        axios.get('/getAllUsers')
+        axios.get('/api/getAllUsers')
         .then((response) => {
             console.log(response);
             const listOfUsers = response.data;
@@ -76,6 +100,16 @@ function CreateAccount () {
             type='password'
             value={password}
             onChange={e => setPassword(e.target.value)}
+            />
+        </label>
+        <label>
+            Confirm Password:
+            <input
+            name="confirmPassword"
+            placeholder='confirmPassword'
+            type='password'
+            value={confirmPassword}
+            onChange={e => setConfirmPassword(e.target.value)}
             />
         </label>
         <button>Create Account</button>

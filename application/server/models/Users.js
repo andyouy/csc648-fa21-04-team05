@@ -1,26 +1,36 @@
-const db = require('../config/database');
-const UserModel = {};
+const Sequelize = require("sequelize");
+const sequelize = require("../config/database");
 
-UserModel.authenticate = (username, password) => {
-    let userId;
-    let baseSQL = "SELECT id, username, password FROM users WHERE username=?";
-    return db.execute(baseSQL, [username])
-    .then(([results, fields]) => {
-        if(results && results.length == 1) {
-            userId = results[0].id;
-            return compare(password, results[0].password);
-        }else{
-            return Promise.reject(-1);
-        }
-    })
-    .then((passwordsMatched) => {
-        if(passwordsMatched){
-            return Promise.resolve(userId);
-        }else{
-            return Promise.resolve(-1);
-        }
-    })
-    .catch((err) => Promise.reject(err));
-}
+const User = sequelize.define("user", {
+    name: {
+        type: Sequelize.STRING(45),
+        allowNull: false
+    },
+    username: {
+        type: Sequelize.STRING(20),
+        primaryKey: true,
+        unique: true
+    },
+    email: {
+        type: Sequelize.STRING(20),
+        allowNull: false,
+        unique: true
+    },
+    password: {
+        type: Sequelize.STRING(128),
+        allowNull: false
+    },
+    usertype: {
+        type: Sequelize.INTEGER,
+        allowNull: false
+    }
 
-module.exports = UserModel;
+},
+    {
+        createdAt: false,
+        updatedAt: false
+    }
+);
+
+
+module.exports = User;
