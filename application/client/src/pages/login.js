@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useState } from 'react';
 import axios from 'axios';
 import {  useHistory } from "react-router-dom";
@@ -46,9 +47,16 @@ function Login ({ updateUserState,updateLoginState}) {
                     }
                 })
     }
+=======
+import axios from "axios";
+import React, { useState } from "react";
+>>>>>>> frontend
 
 
+    const [userID, setUserID] = useState('');
+    const [password, setPassword] = useState('');
 
+<<<<<<< HEAD
     return(
 
         <form onSubmit={loginHandler}>
@@ -82,7 +90,42 @@ function Login ({ updateUserState,updateLoginState}) {
 
         </form>
 
+=======
+    const loginHandler = async (e) => {
+        await axios.post(`/loginAccount`, {
+          userID,
+          password,
+        });
+    }
+>>>>>>> frontend
 
+    return(   
+    <form onSubmit={loginHandler}>
+            <h1>Login</h1>
+        <label>
+            User ID:
+            <input
+            name="User ID"
+            placeholder='User ID'
+            type='text'
+            value={userID}
+            onChange={e => setUserID(e.target.value)}
+            />
+        </label>
+
+    <label>
+        Password:
+        <input
+        name="Password"
+        placeholder='Password'
+        type='password'
+        value={password}
+        onChange={e => setPassword(e.target.value)}
+        />
+    </label>
+    <button>Login</button>
+
+    </form>
         
 
     )
