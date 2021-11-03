@@ -18,21 +18,22 @@ const Navbar = ({loggedIn,updateUserState, updateLoginState}) => {
 
       
     return(
-      
-    <div>
-      <li>
-        <Link to="/">Home</Link>
-      </li>
-      <li>
-          <Link to="/aboutUs">About Us</Link>
-      </li>
-      <li>
-        <Link to="/createAccount">Create Account</Link>
-        </li>
-      <li>
-          {!loggedIn ? <Link to="/login">Login</Link> : null}
-      </li>
-      {loggedIn ? <Link to= "/"><button onClick={logoutHandler}>logout</button></Link> : null}
+<div>
+    <li>
+      <Link to="/">Home</Link>
+    </li>
+    <li>
+        <Link to="/aboutUs">About Us</Link>
+    </li>
+    <li>
+        <Link to="/mainCreateAccount">Create Account</Link>
+    </li>
+    <li>
+        <Link to="/login">Login</Link>
+    </li>
+  <li>
+      <Link to="/employerDashboard">test employer</Link>
+  </li>
     </div>
 
     );

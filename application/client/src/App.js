@@ -16,6 +16,14 @@ function App() {
   const [loggedIn, setLoggedIn] = useState(false);
 
 
+import James from './pages/AboutUs/James';
+import Mohammad from './pages/AboutUs/Mohammad';
+import Ana from './pages/AboutUs/Ana';
+import Andy from './pages/AboutUs/Andy';
+import Courtney from './pages/AboutUs/Courtney';
+import EmployerDashboard from './pages/employerDashboard';
+
+
   function updateLoginState(data){
     setLoggedIn(data);
   }
@@ -33,9 +41,24 @@ function App() {
     <Navbar loggedIn={loggedIn} updateUserState={updateUserState} updateLoginState={updateLoginState} />
       <Switch>
         <Route path='/' exact component={Home} />
-        <Route path='/aboutUs' exact component={aboutUs}/>
-        <Route path='/createAccount' exact component={createAccount}/>
-        <Route exact path='/login'> <Login updateLoginState={updateLoginState} updateUserState={updateUserState}/> </Route>
+        <Route path='/aboutUs' component={aboutUs}/>
+
+        <Route path='/login' component={login}/>
+        <Route path='/mainCreateAccount' component={MainCreateAccount}></Route>
+
+        <Route path='/employeeAccount' component={CreateEmployeeAccount}></Route>
+        <Route path='/employerAccount' component={CreateEmployerAccount}></Route>
+
+
+        <Route path='/employerDashboard' component={EmployerDashboard}></Route>
+
+
+        <Route path='/James' component={James}></Route>
+        <Route path='/Mohammad' component={Mohammad}></Route>
+        <Route path='/Ana' component={Ana}></Route>
+        <Route path='/Andy' component={Andy}></Route>
+        <Route path='/Courtney' component={Courtney}></Route>
+
       </Switch>
 
     </Router>
