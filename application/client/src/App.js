@@ -18,6 +18,7 @@ import Mohammad from './pages/AboutUs/Mohammad';
 import Ana from './pages/AboutUs/Ana';
 import Andy from './pages/AboutUs/Andy';
 import Courtney from './pages/AboutUs/Courtney';
+import EmployerDashboard from './pages/employerDashboard';
 
 
 
@@ -39,7 +40,7 @@ function App() {
         <Route path='/employerAccount' component={CreateEmployerAccount}></Route>
 
 
-   
+        <Route path='/employerDashboard' component={EmployerDashboard}></Route>
 
 
         <Route path='/James' component={James}></Route>
