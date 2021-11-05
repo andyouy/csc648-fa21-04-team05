@@ -1,7 +1,22 @@
 import React from 'react';
 import {  Link } from "react-router-dom";
+import axios from 'axios';
 
-const Navbar= () =>{
+const Navbar = ({loggedIn,updateUserState, updateLoginState}) => {
+
+
+    const logoutHandler = () => {
+        axios.post("/api/logout", {withCredentials: true}).then((response) =>{
+          updateUserState(response.data.loggedIn);
+          updateLoginState(null);
+        })
+        .catch((err) =>{
+          console.log(err);
+        });
+    
+      }
+
+      
     return(
 <div>
     <li>
@@ -20,6 +35,7 @@ const Navbar= () =>{
       <Link to="/employerDashboard">test employer</Link>
   </li>
     </div>
+
     );
 }
 
