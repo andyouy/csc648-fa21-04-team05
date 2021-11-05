@@ -4,6 +4,9 @@
   background-color: #c8d8ef;
   min-width: 100%;
   min-height: 100%;
+  margin: 0;
+  padding: 0;
+  background-image: url(https://careers.bathfitter.com/Media/Default/careers/Background_PopUp.png);
 }
 
 
@@ -11,8 +14,7 @@ body{
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-  background-image: url(https://careers.bathfitter.com/Media/Default/careers/Background_PopUp.png);
-
+ 
 }
 
 button {
