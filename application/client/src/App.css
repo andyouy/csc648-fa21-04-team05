@@ -4,5 +4,53 @@
   background-color: #c8d8ef;
   min-width: 100%;
   min-height: 100%;
+  margin: 0;
+  padding: 0;
+  background-image: url(https://careers.bathfitter.com/Media/Default/careers/Background_PopUp.png);
 }
+
+
+body{
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+ 
+}
+
+button {
+    background-color: #52ab98;
+    color: white;
+    width: 75%;
+    padding: 14px 20px;
+    margin: 20px 0;
+    border: none;
+    cursor: pointer;
+    opacity: 0.9;
+    font-size: 14px;
+    border-radius: 14px;
+  }
+
+  button:active {
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }
+
+  form {
+    width: 400px;
+    box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.3);
+    background: #d9dbe5;
+    border-radius: 20px;
+    text-align: center;
+    margin: 8% auto 0;
+    padding-top: 1%;
+  }
+
+  label {  
+    font-weight: bold; 
+    display: block; 
+    width: 300px; 
+    padding: 10px 10px;
+    margin-bottom: 10px; 
+  }
+
 

@@ -7,13 +7,10 @@ import './App.css';
 
 import Home from './pages/home';
 import aboutUs from './pages/aboutUs';
-import createAccount from './pages/createAccount';
-import Login from './pages/login';
-import axios from 'axios';
 
-function App() {
-  const [loggedInUser,setloggedInUser] = useState();
-  const [loggedIn, setLoggedIn] = useState(false);
+
+import MainCreateAccount from './pages/mainCreateAccount';
+import Login from './pages/login';
 
 
 import James from './pages/AboutUs/James';
@@ -21,7 +18,16 @@ import Mohammad from './pages/AboutUs/Mohammad';
 import Ana from './pages/AboutUs/Ana';
 import Andy from './pages/AboutUs/Andy';
 import Courtney from './pages/AboutUs/Courtney';
+
 import EmployerDashboard from './pages/employerDashboard';
+import CreateEmployeeAccount from './pages/employeeAccount';
+import CreateEmployerAccount from './pages/employerAccount';
+
+
+function App() {
+  const [loggedInUser,setloggedInUser] = useState();
+  const [loggedIn, setLoggedIn] = useState(false);
+
 
 
   function updateLoginState(data){
@@ -43,7 +49,8 @@ import EmployerDashboard from './pages/employerDashboard';
         <Route path='/' exact component={Home} />
         <Route path='/aboutUs' component={aboutUs}/>
 
-        <Route path='/login' component={login}/>
+        <Route path='/login' component={Login}/>
+        
         <Route path='/mainCreateAccount' component={MainCreateAccount}></Route>
 
         <Route path='/employeeAccount' component={CreateEmployeeAccount}></Route>
