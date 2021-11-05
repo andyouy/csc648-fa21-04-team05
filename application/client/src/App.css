@@ -1,8 +1,17 @@
 .App {
-    
   text-align: center;
   position: absolute;
-  background-color: lightblue;
+  background-color: #c8d8ef;
   min-width: 100%;
   min-height: 100%;
+  background-image: url(https://careers.bathfitter.com/Media/Default/careers/Background_PopUp.png);
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
