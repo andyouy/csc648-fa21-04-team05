@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from 'react';
-import './createAccount.css';
+import React, { useState } from 'react';
 
 import axios from 'axios';
 
 
-function CreateAccount () {
+function CreateEmployerAccount () {
 
     const [fullName, setFullName] = useState('');
     const [email, setEmail] = useState('');
@@ -23,7 +22,7 @@ function CreateAccount () {
     return (
 
     <form onSubmit={submitHandler}>
-        <h1>Create Account</h1>
+        <h1>Create Employee Account</h1>
 
         <label>
             Full Name:
@@ -62,14 +61,15 @@ function CreateAccount () {
             placeholder='Password'
             type='password'
             value={password}
-            onChange={e => setUserID(e.target.value)}
+            onChange={e => setPassword(e.target.value)}
             />
         </label>
-        <button>Create Account</button>
+        <button>Create Employer Account</button>
+       
     
         </form>
     
     );
 }
 
-export default CreateAccount;
+export default CreateEmployerAccount;
