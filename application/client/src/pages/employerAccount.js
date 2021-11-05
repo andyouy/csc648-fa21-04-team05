@@ -1,18 +1,21 @@
-import React, { useEffect, useState } from 'react';
-import './createAccount.css';
+import React, { useState } from 'react';
 
 import axios from 'axios';
 
 
-function CreateAccount () {
+function CreateEmployerAccount () {
 
     const [fullName, setFullName] = useState('');
     const [email, setEmail] = useState('');
     const [userID, setUserID] = useState('');
     const [password, setPassword] = useState('');
-    
+
     const submitHandler = async (e) => {
+<<<<<<< HEAD:application/client/src/pages/createAccount.js
         await axios.post('/api/newAccount', {
+=======
+        await axios.post(`/newAccount`, {
+>>>>>>> development:application/client/src/pages/employerAccount.js
           fullName,
           email,
           userID,
@@ -20,6 +23,7 @@ function CreateAccount () {
         });
     }
     
+<<<<<<< HEAD:application/client/src/pages/createAccount.js
     const [users, setUsers] = useState("");
 
     const getUsers = () => {
@@ -33,10 +37,12 @@ function CreateAccount () {
 
     useEffect(() => getUsers(), [])
 
+=======
+>>>>>>> development:application/client/src/pages/employerAccount.js
     return (
 
     <form onSubmit={submitHandler}>
-        <h1>Create Account</h1>
+        <h1>Create Employee Account</h1>
 
         <label>
             Full Name:
@@ -78,15 +84,16 @@ function CreateAccount () {
             onChange={e => setPassword(e.target.value)}
             />
         </label>
-        <button>Create Account</button>
-        <br/>
-        
-        <h1>Simple Get Request From Database</h1>
-        <div>{JSON.stringify(users)}</div>
+        <button>Create Employer Account</button>
+       
+    
         </form>
-
-
+    
     );
 }
 
+<<<<<<< HEAD:application/client/src/pages/createAccount.js
 export default CreateAccount;
+=======
+export default CreateEmployerAccount;
+>>>>>>> development:application/client/src/pages/employerAccount.js
