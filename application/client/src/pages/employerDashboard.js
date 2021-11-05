@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
 function EmployerDashboard(){
@@ -36,6 +36,27 @@ function EmployerDashboard(){
             date,
         });
       }
+
+
+      var list = Shifts.map(function(shift){
+        return(
+          <div>
+            <h1>Current Shifts</h1> 
+            {shift.data.map(item => 
+                <div class="card">
+                  <div id="shiftTitle">Shift Title: {item.Title}</div>
+                  <div id="shiftLocation">Location: {item.Location}</div>
+                  <div id="shiftTime">Time: {item.Time}</div>
+                  <div id="shiftDate">Date: {item.Date}</div>
+
+                  <form onSubmit={DeleteHandler}><button type ='submit' id='view'>Delete Shift</button></form>
+                  <form onSubmit={ViewHandler}><button type ='submit' id='view'>Delete Shift</button></form>
+                  
+                </div>
+            )}
+          </div>
+        )
+      })
       
     return(
     <form onSubmit={submitHandler}>
@@ -81,8 +102,9 @@ function EmployerDashboard(){
         </label>
     <button>Create Shift</button>
     </form>
-
+    
     )
+      
 }
 
 export default EmployerDashboard;
