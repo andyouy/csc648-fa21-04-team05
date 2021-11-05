@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import React, { useState } from 'react';
 import axios from 'axios';
 import {  useHistory } from "react-router-dom";
@@ -47,16 +46,11 @@ function Login ({ updateUserState,updateLoginState}) {
                     }
                 })
     }
-=======
-import axios from "axios";
-import React, { useState } from "react";
->>>>>>> frontend
 
 
     const [userID, setUserID] = useState('');
     const [password, setPassword] = useState('');
 
-<<<<<<< HEAD
     return(
 
         <form onSubmit={loginHandler}>
@@ -90,14 +84,6 @@ import React, { useState } from "react";
 
         </form>
 
-=======
-    const loginHandler = async (e) => {
-        await axios.post(`/loginAccount`, {
-          userID,
-          password,
-        });
-    }
->>>>>>> frontend
 
     return(   
     <form onSubmit={loginHandler}>
