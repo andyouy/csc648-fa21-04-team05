@@ -4,7 +4,7 @@ var bcrypt = require('bcrypt');
 const Users = require("../models/Users");
 
 const regex = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W)/;
-router.post('/api/newAccount', (req, res) => { 
+router.post('/api/newEmployerAccount', (req, res) => { 
    
      let name = req.body.fullName;        
      let username = req.body.userID;
@@ -28,6 +28,7 @@ router.post('/api/newAccount', (req, res) => {
                 }
             }).then((results) => {
                 if(results){
+                    console.log("exists")
                     res.status(400).json("Account already exists")
                 } else {
                     if(regex.test(password)){
@@ -55,16 +56,10 @@ router.post('/api/newAccount', (req, res) => {
     })
  })
 
- router.get('/api/getAllUsers', (req, res, next) => {
-     Users.findAll({
-     }).then((results) => {
-        if(results.length !== 0) {
-            res.send(results)
-        } else{
-            res.status(400).json("error")
-        }
-     })
-  
-})
+ router.post('/api/newShift', (req, res) => {
+     console.log(req.body);
+     console.log(req.session)
+ })
+
  
  module.exports = router;

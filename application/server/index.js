@@ -14,8 +14,10 @@ sequelize.sync()
 
 
 //Routes
-const registerRouter = require('./routes/registerRouter.js')
+const employeeRouter = require('./routes/employeeRouter')
+const employerRouter = require('./routes/employerRouter')
 const loginRouter = require('./routes/loginRouter.js')
+
 
 const app = express();
 
@@ -43,7 +45,8 @@ app.listen(3001, () => {
   console.log(`3001`);
 });
 
-app.use(registerRouter);
+app.use(employeeRouter);
+app.use(employerRouter);
 app.use(loginRouter);
 
 
