@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 var bcrypt = require('bcrypt');
 const Users = require("../models/Users");
+const Shifts = require("../models/Shifts");
 
 const regex = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W)/;
 router.post('/api/newEmployerAccount', (req, res) => { 
@@ -57,8 +58,16 @@ router.post('/api/newEmployerAccount', (req, res) => {
  })
 
  router.post('/api/newShift', (req, res) => {
+     console.log(req.params)
      console.log(req.body);
      console.log(req.session)
+     Shifts.create({
+         title: req.body.shiftTitle,
+         location: req.body.location,
+         time: req.body.time,
+         date: req.body.date,
+         createdBy: req.session.username
+     })
  })
 
  
