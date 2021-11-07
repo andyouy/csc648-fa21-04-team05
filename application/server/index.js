@@ -3,6 +3,7 @@ const session = require("express-session");
 const sequelize = require("./config/database");
 
 const Users = require("./models/Users")
+const Shifts = require("./models/Shifts")
 
 sequelize.sync()
 .then((result) => {
@@ -14,8 +15,10 @@ sequelize.sync()
 
 
 //Routes
-const registerRouter = require('./routes/registerRouter.js')
+const employeeRouter = require('./routes/employeeRouter')
+const employerRouter = require('./routes/employerRouter')
 const loginRouter = require('./routes/loginRouter.js')
+
 
 const app = express();
 
@@ -43,7 +46,8 @@ app.listen(3001, () => {
   console.log(`3001`);
 });
 
-app.use(registerRouter);
+app.use(employeeRouter);
+app.use(employerRouter);
 app.use(loginRouter);
 
 
