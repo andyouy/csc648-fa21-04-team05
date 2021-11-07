@@ -3,6 +3,7 @@ const session = require("express-session");
 const sequelize = require("./config/database");
 
 const Users = require("./models/Users")
+const Shifts = require("./models/Shifts")
 
 sequelize.sync()
 .then((result) => {
