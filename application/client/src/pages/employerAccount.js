@@ -11,7 +11,7 @@ function CreateEmployerAccount () {
     const [password, setPassword] = useState('');
 
     const submitHandler = async (e) => {
-        await axios.post(`/newAccount`, {
+        await axios.post('/api/newAccount', {
           fullName,
           email,
           userID,
