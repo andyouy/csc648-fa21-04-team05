@@ -4,7 +4,6 @@ import axios from 'axios';
 
 const Navbar = ({loggedIn,updateUserState, updateLoginState}) => {
 
-
     const logoutHandler = () => {
         axios.post("/api/logout", {withCredentials: true}).then((response) =>{
           updateUserState(response.data.loggedIn);
