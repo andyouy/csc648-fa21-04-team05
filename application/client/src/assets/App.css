@@ -6,9 +6,19 @@
   min-height: 100%;
   margin: 0;
   padding: 0;
-  background-image: url(https://careers.bathfitter.com/Media/Default/careers/Background_PopUp.png);
+  background-image: url("./concrete_seamless.png");
 }
 
+.Footer{
+  padding: 30px 0;
+  clear: both;
+  font-size: 12px;
+  color: #fff;
+  color: #ccc;
+  text-align: center;
+  background: #666;
+  border-top: 8px solid #4aaaa5;
+}
 
 body{
   margin: 0;
