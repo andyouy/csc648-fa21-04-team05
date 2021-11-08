@@ -20,6 +20,7 @@ import Courtney from './pages/AboutUs/Courtney';
 import EmployerDashboard from './pages/employerDashboard';
 import CreateEmployeeAccount from './pages/employeeAccount';
 import CreateEmployerAccount from './pages/employerAccount';
+import CreateShyft from './pages/createShyft';
 
 
 function App() {
@@ -57,6 +58,8 @@ function App() {
         <Route path='/employeeAccount' component={CreateEmployeeAccount}></Route>
         <Route path='/employerAccount' component={CreateEmployerAccount}></Route>
         <Route path='/employerDashboard' component={EmployerDashboard}></Route>
+        <Route path='/createShyft' component={CreateShyft}></Route>
+
 
       </Switch>
 
