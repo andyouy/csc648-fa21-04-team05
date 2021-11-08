@@ -58,18 +58,6 @@ function App() {
         <Route path='/employerAccount' component={CreateEmployerAccount}></Route>
         <Route path='/employerDashboard' component={EmployerDashboard}></Route>
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-        <Route path='/James' component={James}></Route>
-        <Route path='/Mohammad' component={Mohammad}></Route>
-        <Route path='/Ana' component={Ana}></Route>
-        <Route path='/Andy' component={Andy}></Route>
-        <Route path='/Courtney' component={Courtney}></Route>
-
-=======
->>>>>>> development
-=======
->>>>>>> 4ad7c4316bd73dc38d8be8e92eb18b26e8210b88
       </Switch>
 
     </Router>
