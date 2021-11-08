@@ -48,10 +48,7 @@ import EmployerDashboard from './pages/employerDashboard';
 
         <Route path='/employeeAccount' component={CreateEmployeeAccount}></Route>
         <Route path='/employerAccount' component={CreateEmployerAccount}></Route>
-
-
         <Route path='/employerDashboard' component={EmployerDashboard}></Route>
-
 
         <Route path='/James' component={James}></Route>
         <Route path='/Mohammad' component={Mohammad}></Route>
