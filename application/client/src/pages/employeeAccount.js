@@ -1,10 +1,6 @@
-<<<<<<< HEAD:application/client/src/pages/createAccount.js
 import React, { useEffect, useState } from 'react';
 import {  useHistory } from "react-router-dom";
-import './createAccount.css';
-=======
-import React, { useState } from 'react';
->>>>>>> frontend:application/client/src/pages/employeeAccount.js
+
 
 import axios from 'axios';
 
@@ -104,31 +100,11 @@ function CreateEmployeeAccount () {
             type='password'
             value={password}
             onChange={e => setPassword(e.target.value)}
-<<<<<<< HEAD:application/client/src/pages/createAccount.js
-            />
-        </label>
-        <label>
-            Confirm Password:
-            <input
-            name="confirmPassword"
-            placeholder='confirmPassword'
-            type='password'
-            value={confirmPassword}
-            onChange={e => setConfirmPassword(e.target.value)}
-            />
-        </label>
-        <button>Create Account</button>
-        <br/>
-        
-        <h1>Simple Get Request From Database</h1>
-        <div>{JSON.stringify(users)}</div>
-=======
             />
         </label>
         <button>Create Employee Account</button>
        
     
->>>>>>> frontend:application/client/src/pages/employeeAccount.js
         </form>
 
 

@@ -11,11 +11,7 @@ function CreateEmployerAccount () {
     const [password, setPassword] = useState('');
 
     const submitHandler = async (e) => {
-<<<<<<< HEAD:application/client/src/pages/createAccount.js
         await axios.post('/api/newAccount', {
-=======
-        await axios.post(`/newAccount`, {
->>>>>>> development:application/client/src/pages/employerAccount.js
           fullName,
           email,
           userID,
@@ -23,22 +19,6 @@ function CreateEmployerAccount () {
         });
     }
     
-<<<<<<< HEAD:application/client/src/pages/createAccount.js
-    const [users, setUsers] = useState("");
-
-    const getUsers = () => {
-        axios.get('/api/getAllUsers')
-        .then((response) => {
-            console.log(response);
-            const listOfUsers = response.data;
-            setUsers(listOfUsers)
-        })
-    }
-
-    useEffect(() => getUsers(), [])
-
-=======
->>>>>>> development:application/client/src/pages/employerAccount.js
     return (
 
     <form onSubmit={submitHandler}>
@@ -92,8 +72,4 @@ function CreateEmployerAccount () {
     );
 }
 
-<<<<<<< HEAD:application/client/src/pages/createAccount.js
-export default CreateAccount;
-=======
 export default CreateEmployerAccount;
->>>>>>> development:application/client/src/pages/employerAccount.js

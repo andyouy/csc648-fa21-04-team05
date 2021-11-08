@@ -2,15 +2,10 @@ const express = require('express');
 const router = express.Router();
 var bcrypt = require('bcrypt');
 const Users = require("../models/Users");
+const Shifts = require("../models/Shifts");
 
-<<<<<<< HEAD
-const db = require('../config/database');
-
-router.post('/api/newAccount', (req, res, next) => { 
-=======
 const regex = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W)/;
-router.post('/api/newAccount', (req, res) => { 
->>>>>>> development
+router.post('/api/newEmployerAccount', (req, res) => { 
    
      let name = req.body.fullName;        
      let username = req.body.userID;
@@ -19,14 +14,6 @@ router.post('/api/newAccount', (req, res) => {
      let email = req.body.email;
      console.log("/newAccount")
 
-<<<<<<< HEAD
- router.get('/api/getAllUsers', (req, res, next) => {
-    console.log("working");
-    let baseSQL = 'SELECT * from user';
-    db.query(baseSQL).then(([results, fields]) => {
-        console.log(results);
-        res.send(results);
-=======
     Users.findOne({
         where: {
             username: username
@@ -42,6 +29,7 @@ router.post('/api/newAccount', (req, res) => {
                 }
             }).then((results) => {
                 if(results){
+                    console.log("exists")
                     res.status(400).json("Account already exists")
                 } else {
                     if(regex.test(password)){
@@ -66,20 +54,21 @@ router.post('/api/newAccount', (req, res) => {
                 }
             })
         }
->>>>>>> development
     })
  })
 
- router.get('/api/getAllUsers', (req, res, next) => {
-     Users.findAll({
-     }).then((results) => {
-        if(results.length !== 0) {
-            res.send(results)
-        } else{
-            res.status(400).json("error")
-        }
+ router.post('/api/newShift', (req, res) => {
+     console.log(req.params)
+     console.log(req.body);
+     console.log(req.session)
+     Shifts.create({
+         title: req.body.shiftTitle,
+         location: req.body.location,
+         time: req.body.time,
+         date: req.body.date,
+         createdBy: req.session.username
      })
-  
-})
+ })
+
  
  module.exports = router;
