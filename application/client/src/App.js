@@ -18,16 +18,17 @@ import Andy from './pages/AboutUs/Andy';
 import Courtney from './pages/AboutUs/Courtney';
 
 import EmployerDashboard from './pages/employerDashboard';
+import EmployeeDashboard from './pages/employeeDashboard';
 import CreateEmployeeAccount from './pages/employeeAccount';
 import CreateEmployerAccount from './pages/employerAccount';
 import CreateShyft from './pages/createShyft';
+import FindShyft from './pages/findShyft';
+
 
 
 function App() {
   const [loggedInUser,setloggedInUser] = useState();
   const [loggedIn, setLoggedIn] = useState(false);
-
-
 
   function updateLoginState(data){
     setLoggedIn(data);
@@ -58,7 +59,10 @@ function App() {
         <Route path='/employeeAccount' component={CreateEmployeeAccount}></Route>
         <Route path='/employerAccount' component={CreateEmployerAccount}></Route>
         <Route path='/employerDashboard' component={EmployerDashboard}></Route>
+        <Route path='/employeeDashboard' component={EmployeeDashboard}></Route>
         <Route path='/createShyft' component={CreateShyft}></Route>
+        <Route path='/findShyft' component={FindShyft}></Route>
+
 
 
       </Switch>

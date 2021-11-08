@@ -30,11 +30,19 @@ const Navbar = ({loggedIn,updateUserState, updateLoginState}) => {
     <li>
         <Link to="/login">Login</Link>
     </li>
+
+    {/* TEST */}
   <li>
       <Link to="/employerDashboard">[TEST] Employer Dashboard</Link>
   </li>
   <li>
       <Link to="/createShyft">[TEST] Create Shyft</Link>
+  </li>
+  <li>
+      <Link to="/employeeDashboard">[TEST] Employee Dashboard</Link>
+  </li>
+  <li>
+      <Link to="/findShyft">[TEST] Find Shift</Link>
   </li>
     </div>
 
