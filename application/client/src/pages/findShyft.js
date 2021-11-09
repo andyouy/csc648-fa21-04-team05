@@ -3,11 +3,11 @@ import axios from 'axios';
 
 function FindShyft(){
 
-    const [Shifts, setShifts] = useState([]);
-    const [shiftTitle, setShiftTitle] = useState('');
-    const [location, setLocation] = useState('');
-    const [time, setTime] = useState('');
-    const [date, setDate] = useState('');
+    const [Shifts, getShifts] = useState([]);
+    const [shiftTitle, getShiftTitle] = useState('');
+    const [location, getLocation] = useState('');
+    const [time, getTime] = useState('');
+    const [date, getDate] = useState('');
 
     const submitHandler = async (e) => {
         axios.post(`/newShift`, {
@@ -62,35 +62,14 @@ function FindShyft(){
         <h1>Available Shyfts</h1>
         <label>
             Shift:
-            <input
-            name="Title"
-            placeholder="Shift"
-            type='text'
-            value={shiftTitle}
-            onChange={e => setShiftTitle(e.target.value)}
-            />
         </label>
         <label>
             Location:
-            <input
-            name="Location"
-            placeholder="Location"
-            type='text'
-            value={location}
-            onChange={e => setLocation(e.target.value)}
-            />
         </label>
         <label>
-            Time:
-            <input
-            name="Time"
-            placeholder="Time"
-            type='time'
-            value={time}
-            onChange={e => setTime(e.target.value)}
-            />
+            Start Time:
         </label>
-    <button>Create Shift</button>
+    <button>Find Shift</button>
     </form>
     
     )
