@@ -63,8 +63,6 @@ function App() {
         <Route path='/createShyft' component={CreateShyft}></Route>
         <Route path='/findShyft' component={FindShyft}></Route>
 
-
-
       </Switch>
 
     </Router>

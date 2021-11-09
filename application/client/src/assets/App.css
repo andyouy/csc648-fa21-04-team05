@@ -6,24 +6,34 @@
   margin: 0;
   padding: 0;
   color: rgba(0, 0, 0, 0.692);
-  font-family: "Trebuchet MS", "Noto Sans", sans-serif;
+  font-family: "Trebuchet MS", "Verdana", sans-serif;
   background-image: url("./concrete_seamless.png");
 }
 
-.Footer{
-  padding: 30px 0;
-  clear: both;
-  font-size: 12px;
-  color: #fff;
-  text-align: center;
-  background: #666;
-  border-top: 8px solid #4aaaa5;
-}
-
-body{
+ul{
+  list-style: none;
   margin: 0;
   padding: 0;
-  font-family: sans-serif; 
+}
+
+a{
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+.navbar{
+  height: var(--nav-size);
+  background-color: var(--bg);
+  padding: 0 1rem;
+  border-bottom: var(--border);
+}
+
+.navbar-nav {
+  max-width: 100%;
+  max-height: 100%;
+  display: flex;
+  justify-content: flex-end;
+
 }
 
 button {
