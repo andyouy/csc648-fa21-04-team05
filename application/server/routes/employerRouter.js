@@ -35,7 +35,7 @@ router.post('/api/newEmployerAccount', (req, res) => {
                     if(regex.test(password)){
                         if(password == confirmPassword){
                             const hashedPassword = bcrypt.hashSync(password, 10)
-                
+                            console.log("here")
                             Users.create({
                                 name: name,
                                 username: username,
@@ -68,6 +68,7 @@ router.post('/api/newEmployerAccount', (req, res) => {
          date: req.body.date,
          createdBy: req.session.username
      })
+     res.status(200).json("sucessfully created shift")
  })
 
  

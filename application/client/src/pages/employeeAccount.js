@@ -18,7 +18,7 @@ function CreateEmployeeAccount () {
     const submitHandler = (e) => {
         e.preventDefault();
 
-        axios.post('/api/newAccount', {
+        axios.post('/api/newEmployeeAccount', {
           fullName,
           email,
           userID,
@@ -27,7 +27,7 @@ function CreateEmployeeAccount () {
         }, {withCredentials:true})
         .then(response => {
             if(response.data === "Successfully created") {
-                history.push('/')
+                history.push('/login')
             }
         })
         .catch(error => {
@@ -45,17 +45,6 @@ function CreateEmployeeAccount () {
     }
     
     const [users, setUsers] = useState("");
-
-    const getUsers = () => {
-        axios.get('/api/getAllUsers')
-        .then((response) => {
-            console.log(response);
-            const listOfUsers = response.data;
-            setUsers(listOfUsers)
-        })
-    }
-
-    useEffect(() => getUsers(), [])
 
     return (
 
@@ -100,6 +89,16 @@ function CreateEmployeeAccount () {
             type='password'
             value={password}
             onChange={e => setPassword(e.target.value)}
+            />
+        </label>
+        <label>
+            Confirm Password:
+            <input
+            name="Password"
+            placeholder='Password'
+            type='password'
+            value={confirmPassword}
+            onChange={e => setConfirmPassword(e.target.value)}
             />
         </label>
         <button>Create Employee Account</button>
