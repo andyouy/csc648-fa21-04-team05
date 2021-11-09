@@ -20,6 +20,7 @@ import Courtney from './pages/AboutUs/Courtney';
 import EmployerDashboard from './pages/employerDashboard';
 import CreateEmployeeAccount from './pages/employeeAccount';
 import CreateEmployerAccount from './pages/employerAccount';
+import Jaguar from './pages/AboutUs/Jaguar';
 
 
 function App() {
@@ -51,6 +52,7 @@ function App() {
         <Route path='/Ana' component={Ana}></Route>
         <Route path='/Andy' component={Andy}></Route>
         <Route path='/Courtney' component={Courtney}></Route>
+        <Route path='/Jaguar' component={Jaguar}></Route>
         <Route path='/login' component={Login}/>
         
         <Route path='/mainCreateAccount' component={MainCreateAccount}></Route>
