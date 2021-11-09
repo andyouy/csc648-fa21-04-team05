@@ -1,16 +1,20 @@
 import React from "react";
-import axios from "axios";
+import { Link } from "react-router-dom";
 
 
 function EmployeeDashboard(){
 
-
-
-
-
 return(
     <div>
+        <h1>Dashboard</h1>
 
+            <Link to="/createShyft">
+                <button ><span><h3>Find Shyft</h3></span></button>
+            </Link>
+            <Link to="/createShyft">
+                <button ><span><h3>View Shyfts</h3></span></button>
+            </Link>
+           
     </div>
 )
 

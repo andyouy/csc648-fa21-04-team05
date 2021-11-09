@@ -7,7 +7,7 @@ const Footer = () => {
                 <hr/>
                 <div classname="row">
                     <p classname="col">
-                     &copy;{new Date().getFullYear()} Shyft, Inc.All rights reserved.
+                    Copyright &copy; 2021 Shyft, Inc. All rights reserved.
                     </p>
                 </div>
             </div>
