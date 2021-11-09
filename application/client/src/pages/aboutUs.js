@@ -21,6 +21,9 @@ function AboutUs() {
     <Link to="/Courtney">
     <button ><span><h3>Courtney Radford</h3></span></button>
     </Link>
+    <Link to="/Jaguar">
+    <button ><span><h3>Jagjot Saggar</h3></span></button>
+    </Link>
     
 </div>
     );
