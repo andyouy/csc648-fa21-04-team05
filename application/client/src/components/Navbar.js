@@ -1,19 +1,23 @@
 import React from 'react';
 import {  Link } from "react-router-dom";
 import axios from 'axios';
+import {  useHistory } from "react-router-dom";
 
 const Navbar = ({loggedIn,updateUserState, updateLoginState}) => {
 
+    let history = useHistory;
     const logoutHandler = () => {
         axios.post("/api/logout", {withCredentials: true}).then((response) =>{
           updateUserState(response.data.loggedIn);
           updateLoginState(null);
+          history.push("/");
         })
         .catch((err) =>{
           console.log(err);
         });
     
       }
+      
 
       
     return(
@@ -28,10 +32,10 @@ const Navbar = ({loggedIn,updateUserState, updateLoginState}) => {
         <Link to="/mainCreateAccount">Create Account</Link>
     </li>
     <li>
-        <Link to="/login">Login</Link>
+        {!loggedIn ? <Link to="/login">Login</Link> : <Link to="/" onClick={logoutHandler}> Logout</Link>}
     </li>
 
-    {/* TEST */}
+  {/*
   <li>
       <Link to="/employerDashboard">[TEST] Employer Dashboard</Link>
   </li>
@@ -43,7 +47,7 @@ const Navbar = ({loggedIn,updateUserState, updateLoginState}) => {
   </li>
   <li>
       <Link to="/findShyft">[TEST] Find Shift</Link>
-  </li>
+  </li> */}
     </div>
 
     );
