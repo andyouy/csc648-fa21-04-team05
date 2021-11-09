@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import {  useHistory } from "react-router-dom";
 import axios from 'axios';
 
 function CreateShyft(){
@@ -9,13 +10,20 @@ function CreateShyft(){
     const [time, setTime] = useState('');
     const [date, setDate] = useState('');
 
-    const submitHandler = async (e) => {
+    let history = useHistory();
 
-        axios.post(`/newShift`, {
+    const submitHandler = async (e) => {
+        e.preventDefault();
+        axios.post(`/api/newShift`, {
             shiftTitle,
             location,
             time,
             date,
+        })
+        .then(response => {
+            if(response){
+                history.go(0);
+            }
         });
     }
 
