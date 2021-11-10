@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 function MainCreateAccount() {
   return (
-    <div>
+    <div className="content-wrap">
       
     <h1>Create Account</h1>
     <p>Select Account Type: </p>

@@ -48,7 +48,7 @@ function CreateShyft(){
 
       var list = Shifts.map(function(shift){
         return(
-          <div>
+          <div className="content-wrap">
             <h1>Current Shifts</h1> 
             {shift.data.map(item => 
                 <div class="card">

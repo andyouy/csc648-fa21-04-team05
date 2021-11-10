@@ -43,7 +43,7 @@ function CreateEmployerAccount () {
     }
     
     return (
-
+<div className="content-wrap">
     <form onSubmit={submitHandler}>
         <h1>Create Employee Account</h1>
 
@@ -101,7 +101,7 @@ function CreateEmployerAccount () {
        
     
         </form>
-    
+        </div>
     );
 }
 
