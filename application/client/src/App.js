@@ -53,7 +53,6 @@ function App() {
   return (
 
     <div className="App">
-    <h1> Shyft </h1>
  
     <Router>
     <Navbar loggedIn={loggedIn} updateUserState={updateUserState} updateLoginState={updateLoginState} />

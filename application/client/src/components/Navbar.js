@@ -35,9 +35,6 @@ const Navbar = ({loggedIn,updateUserState, updateLoginState}) => {
                 <Link to="/mainCreateAccount">Create Account</Link>
             </ul>
             <ul className="navbar-nav">
-                <Link to="/login">Login</Link>
-            </ul>
-            <ul className="navbar-nav">
               {!loggedIn ? <Link to="/login">Login</Link> : <Link to="/" onClick={logoutHandler}> Logout</Link>}
             </ul>
 
