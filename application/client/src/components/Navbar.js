@@ -3,7 +3,7 @@ import {  Link } from "react-router-dom";
 import axios from 'axios';
 import {  useHistory } from "react-router-dom";
 
-const Navbar = ({loggedIn,updateUserState, updateLoginState}) => {
+const Navbar = ({loggedIn,updateUserState, updateLoginState}, props) => {
 
     let history = useHistory;
     const logoutHandler = () => {
@@ -17,46 +17,32 @@ const Navbar = ({loggedIn,updateUserState, updateLoginState}) => {
         });
     
       }
-      
-      
+          
     return(
-      <nav className="navbar">
-        <div>
-            <ul className="navbar-nav">
-              
-            </ul>
-            <ul className="navbar-nav">
-              <Link to="/">Home</Link>
-            </ul>
-            <ul className="navbar-nav">
-                <Link to="/aboutUs">About Us</Link>
-            </ul>
-            <ul className="navbar-nav">
-                <Link to="/mainCreateAccount">Create Account</Link>
-            </ul>
-            <ul className="navbar-nav">
-                <Link to="/login">Login</Link>
-            </ul>
-            <ul className="navbar-nav">
-              {!loggedIn ? <Link to="/login">Login</Link> : <Link to="/" onClick={logoutHandler}> Logout</Link>}
-            </ul>
+        <div className="container">
+            <nav className="navbar">
+              <a href="home.html" id="logo">Shyft</a>
 
-              {/* TEST */}
-            {/* <ul>
-                <Link to="/employerDashboard">[TEST] Employer Dashboard</Link>
-            </ul>
-            <ul>
-                <Link to="/createShyft">[TEST] Create Shyft</Link>
-            </ul>
-            <ul>
-                <Link to="/employeeDashboard">[TEST] Employee Dashboard</Link>
-            </ul>
-            <ul>
-                <Link to="/findShyft">[TEST] Find Shift</Link>
-            </ul> */}
-        </div>
+              <ul className="navbar-nav">
+                <Link to="/">Home</Link>
+              </ul>
+              <ul className="navbar-nav">
+                  <Link to="/aboutUs">About Us</Link>
+              </ul>
+              <ul className="navbar-nav">
+                  <Link to="/mainCreateAccount">Create Account</Link>
+              </ul>
+              <ul className="navbar-nav">
+                {!loggedIn ? <Link to="/login">Login</Link> : <Link to="/" onClick={logoutHandler}> Logout</Link>}
+              </ul>
 
-      </nav>
+                {/* TEST */}
+              {/* <ul><Link to="/employerDashboard">[TEST] Employer Dashboard</Link></ul>
+              <ul><Link to="/createShyft">[TEST] Create Shyft</Link></ul>
+              <ul><Link to="/employeeDashboard">[TEST] Employee Dashboard</Link></ul>
+              <ul><Link to="/findShyft">[TEST] Find Shift</Link></ul> */}
+            </nav>
+        </div>      
     );
 
 }
