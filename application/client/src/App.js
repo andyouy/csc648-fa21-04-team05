@@ -53,34 +53,32 @@ function App() {
   return (
     <div className="page-container">
     
-    <Router>
-      <Navbar loggedIn={loggedIn} updateUserState={updateUserState} updateLoginState={updateLoginState} />
-      <div className="content-wrap">
+      <Router>
+        <Navbar loggedIn={loggedIn} updateUserState={updateUserState} updateLoginState={updateLoginState} />
 
-      <Switch>
-        <Route path='/' exact component={Home} />
-        <Route path='/aboutUs' component={AboutUs}/>
-        <Route path='/James' component={James}></Route>
-        <Route path='/Mohammad' component={Mohammad}></Route>
-        <Route path='/Ana' component={Ana}></Route>
-        <Route path='/Andy' component={Andy}></Route>
-        <Route path='/Courtney' component={Courtney}></Route>
-        <Route path='/Jaguar' component={Jaguar}></Route>
+        <Switch>
+          <Route path='/' exact component={Home} />
+          <Route path='/aboutUs' component={AboutUs}/>
+          <Route path='/James' component={James}></Route>
+          <Route path='/Mohammad' component={Mohammad}></Route>
+          <Route path='/Ana' component={Ana}></Route>
+          <Route path='/Andy' component={Andy}></Route>
+          <Route path='/Courtney' component={Courtney}></Route>
+          <Route path='/Jaguar' component={Jaguar}></Route>
 
-        <Route path='/login'><Login updateUserState={updateUserState} updateLoginState={updateLoginState}/> </Route>
-        
-        <Route path='/mainCreateAccount' component={MainCreateAccount}></Route>
-        <Route path='/employeeAccount' component={CreateEmployeeAccount}></Route>
-        <Route path='/employerAccount' component={CreateEmployerAccount}></Route>
-        <Route path='/employerDashboard' component={EmployerDashboard}></Route>
-        <Route path='/employeeDashboard' component={EmployeeDashboard}></Route>
-        <Route path='/createShyft' component={CreateShyft}></Route>
-        <Route path='/findShyft' component={FindShyft}></Route>
+          <Route path='/login'><Login updateUserState={updateUserState} updateLoginState={updateLoginState}/> </Route>
+          
+          <Route path='/mainCreateAccount' component={MainCreateAccount}></Route>
+          <Route path='/employeeAccount' component={CreateEmployeeAccount}></Route>
+          <Route path='/employerAccount' component={CreateEmployerAccount}></Route>
+          <Route path='/employerDashboard' component={EmployerDashboard}></Route>
+          <Route path='/employeeDashboard' component={EmployeeDashboard}></Route>
+          <Route path='/createShyft' component={CreateShyft}></Route>
+          <Route path='/findShyft' component={FindShyft}></Route>
 
-      </Switch>
-      </div>
+        </Switch>
 
-    </Router>
+      </Router>
 
       <Footer />
     </div>
