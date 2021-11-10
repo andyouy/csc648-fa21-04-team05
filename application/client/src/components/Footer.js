@@ -2,17 +2,19 @@
 
 const Footer = () => {
     return (
-        <div classname="main-footer">
-            <div classname="container">
-                <hr/>
-                <div classname="row">
-                    <p classname="col">
-                    Copyright &copy; 2021 Shyft, Inc. All rights reserved.
-                    </p>
-                </div>
-            </div>
+        // <div className="footer">
+            // <div classname="container">
+            //     <hr/>
+            //         <p classname="col">
+            //         Copyright &copy; 2021 Shyft, Inc. All rights reserved.
+            //         </p>
+            // </div>
 
-        </div>
+        // </div>
+        <footer>
+            Copyright &copy; 2021 Shyft, Inc. All rights reserved.
+        </footer>
     )
 }
 export default Footer;
+
