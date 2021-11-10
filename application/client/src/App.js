@@ -29,7 +29,7 @@ import FindShyft from './pages/findShyft';
 
 function App() {
   const [loggedInUser,setloggedInUser] = useState();
-  const [loggedIn, setLoggedIn] = useState();
+  const [loggedIn, setLoggedIn] = useState(null);
 
   function updateLoginState(data){
     setLoggedIn(data);
