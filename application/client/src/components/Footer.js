@@ -12,12 +12,7 @@ const Footer = () => {
 
         // </div>
         <footer>
-            <div className="footer">
-                <hr/>
-                    <p classname="col">
-                    Copyright &copy; 2021 Shyft, Inc. All rights reserved.
-                    </p>
-            </div>
+            Copyright &copy; 2021 Shyft, Inc. All rights reserved.
         </footer>
     )
 }
