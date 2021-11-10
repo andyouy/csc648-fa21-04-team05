@@ -47,65 +47,67 @@ function CreateEmployeeAccount () {
     const [users, setUsers] = useState("");
 
     return (
-
-    <form onSubmit={submitHandler}>
-        <h1>Create Employee Account</h1>
-
-        <label>
-            Full Name:
-            <input
-            name="Full Name"
-            placeholder='Full Name'
-            type='text'
-            value={fullName}
-            onChange={e => setFullName(e.target.value)}
-             />
-        </label>
-        <label>
-            Email Address:
-        <input
-        name="Email Address"
-        placeholder='Email Address'
-        type='text'
-        value={email}
-        onChange={e => setEmail(e.target.value)}
-        />
-        </label>
-        <label>
-            User ID:
-            <input
-            name="User ID"
-            placeholder='User ID'
-            type='text'
-            value={userID}
-            onChange={e => setUserID(e.target.value)}
-            />
-        </label>
-        <label>
-            Password:
-            <input
-            name="Password"
-            placeholder='Password'
-            type='password'
-            value={password}
-            onChange={e => setPassword(e.target.value)}
-            />
-        </label>
-        <label>
-            Confirm Password:
-            <input
-            name="Password"
-            placeholder='Password'
-            type='password'
-            value={confirmPassword}
-            onChange={e => setConfirmPassword(e.target.value)}
-            />
-        </label>
-        <button>Create Employee Account</button>
-       
+        <div className="content-wrap">
     
-        </form>
+        <form onSubmit={submitHandler}>
+            <h1>Create Employee Account</h1>
 
+            <label>
+                Full Name:
+                <input
+                name="Full Name"
+                placeholder='Full Name'
+                type='text'
+                value={fullName}
+                onChange={e => setFullName(e.target.value)}
+                />
+            </label>
+            <label>
+                Email Address:
+            <input
+            name="Email Address"
+            placeholder='Email Address'
+            type='text'
+            value={email}
+            onChange={e => setEmail(e.target.value)}
+            />
+            </label>
+            <label>
+                User ID:
+                <input
+                name="User ID"
+                placeholder='User ID'
+                type='text'
+                value={userID}
+                onChange={e => setUserID(e.target.value)}
+                />
+            </label>
+            <label>
+                Password:
+                <input
+                name="Password"
+                placeholder='Password'
+                type='password'
+                value={password}
+                onChange={e => setPassword(e.target.value)}
+                />
+            </label>
+            <label>
+                Confirm Password:
+                <input
+                name="Password"
+                placeholder='Password'
+                type='password'
+                value={confirmPassword}
+                onChange={e => setConfirmPassword(e.target.value)}
+                />
+            </label>
+            <button>Create Employee Account</button>
+        
+        
+            </form>
+
+            </div>
 
     );
 }
