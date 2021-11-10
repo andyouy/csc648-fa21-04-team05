@@ -16,8 +16,10 @@ const Navbar = ({loggedIn,updateUserState, updateLoginState}) => {
           console.log(err);
         });
     
-      }   
-   
+      }
+      
+
+      
     return(
       <nav className="navbar">
         <div>
