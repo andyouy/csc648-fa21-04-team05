@@ -21,6 +21,7 @@ import EmployerDashboard from './pages/employerDashboard';
 import EmployeeDashboard from './pages/employeeDashboard';
 import CreateEmployeeAccount from './pages/employeeAccount';
 import CreateEmployerAccount from './pages/employerAccount';
+import Jaguar from './pages/AboutUs/Jaguar';
 import CreateShyft from './pages/createShyft';
 import FindShyft from './pages/findShyft';
 
@@ -28,20 +29,30 @@ import FindShyft from './pages/findShyft';
 
 function App() {
   const [loggedInUser,setloggedInUser] = useState();
-  const [loggedIn, setLoggedIn] = useState(false);
+  const [loggedIn, setLoggedIn] = useState(null);
 
   function updateLoginState(data){
     setLoggedIn(data);
-  }
+  };
 
   function updateUserState(user){
     setloggedInUser(user)
-  }
+  };
+
+  useEffect(() => {
+    const data = localStorage.getItem("loggedIn")
+    if(data) {
+      setLoggedIn(JSON.parse(data))
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("loggedIn", JSON.stringify(loggedIn))
+  });
 
   return (
 
     <div className="App">
-    <h1> Shyft </h1>
  
     <Router>
     <Navbar loggedIn={loggedIn} updateUserState={updateUserState} updateLoginState={updateLoginState} />
@@ -53,7 +64,9 @@ function App() {
         <Route path='/Ana' component={Ana}></Route>
         <Route path='/Andy' component={Andy}></Route>
         <Route path='/Courtney' component={Courtney}></Route>
-        <Route path='/login' component={Login}/>
+        <Route path='/Jaguar' component={Jaguar}></Route>
+
+        <Route path='/login'><Login updateUserState={updateUserState} updateLoginState={updateLoginState}/> </Route>
         
         <Route path='/mainCreateAccount' component={MainCreateAccount}></Route>
         <Route path='/employeeAccount' component={CreateEmployeeAccount}></Route>
@@ -62,8 +75,6 @@ function App() {
         <Route path='/employeeDashboard' component={EmployeeDashboard}></Route>
         <Route path='/createShyft' component={CreateShyft}></Route>
         <Route path='/findShyft' component={FindShyft}></Route>
-
-
 
       </Switch>
 

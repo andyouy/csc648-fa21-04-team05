@@ -23,13 +23,13 @@ function Login ({ updateUserState,updateLoginState}) {
                 .then(response => {
                     if(response.data){
                         updateUserState(response.data);
-                        updateLoginState(true);
+                        updateLoginState("true");
                         setLoading(!loading)
 
-                        if(response.data.type == 1) {
-                            history.push('/aboutUs')
+                        if(response.data.type === 1) {
+                            history.push('/employerDashboard')
                         } else {
-                            history.push('/')
+                            history.push('/employeeDashboard')
                         }
                     }
                 })
