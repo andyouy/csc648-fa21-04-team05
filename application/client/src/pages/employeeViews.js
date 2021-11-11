@@ -27,17 +27,20 @@ function EmployeeViews() {
     }
 
 
-      return(
+    return(
+    <div className="content-wrap">
         <div className="shifts">
-            <h3>Claimed Shifts</h3>
+            <h1>Claimed Shifts</h1>
+            <hr />
             <br></br>
             {shifts.map((val,key) =>
             {
                 return (
                     <div className="shift">
-                        <div>
-                            <h3>title: {val.title}</h3>
-                            <h3>location: {val.location}</h3>
+                        <div className="shift-details">
+                            <h2>${val.minPay}.00 + tips</h2>
+                            <h3>position: {val.title} @ {val.createdBy} </h3>
+                            <h3>address: {val.location}</h3>
                             <h3>time: {val.time}</h3>
                             <h3>date: {val.date}</h3>
                         </div>
@@ -48,6 +51,7 @@ function EmployeeViews() {
                 )
             })}
         </div>
+    </div>
       );
 }
 

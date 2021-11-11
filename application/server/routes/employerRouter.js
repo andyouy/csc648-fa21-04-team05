@@ -66,7 +66,8 @@ router.post('/api/newEmployerAccount', (req, res) => {
          location: req.body.location,
          time: req.body.time,
          date: req.body.date,
-         createdBy: req.session.username
+         createdBy: req.session.username,
+         minPay: req.body.minPay
      })
      res.status(200).json("sucessfully created shift")
  })

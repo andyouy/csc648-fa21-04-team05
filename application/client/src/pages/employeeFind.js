@@ -25,25 +25,32 @@ function EmployeeFind() {
     }
 
       return(
-        <div className="shifts">
-            {shifts.map((val,key) =>
-            {
-                return (
-                    <div className="shift">
-                        <div>
-                            <h3>title: {val.title}</h3>
-                            <h3>location: {val.location}</h3>
-                            <h3>time: {val.time}</h3>
-                            <h3>date: {val.date}</h3>
+        <div className="content-wrap">
+            <div>
+                <h1>BROWSE AVAILABLE SHIFTS</h1>
+                <hr/>
+            </div>
+            <div className="available-shifts">
+                    {shifts.map((val,key) =>
+                {
+                    return (
+                        <div className="shift">
+                            <div>
+                                <h3>date: {val.date}</h3>
+                                <h2>${val.minPay}.00</h2>
+                                <h3>seeking: {val.title} @ {val.createdBy}</h3>
+                                <h3>start time: {val.time}</h3>
+                                <h3>address: {val.location}</h3>
+                            </div>
+
+                            <div>
+                                <button onClick={()=> claimShift(val.shiftID)}>Claim</button>
+                            </div>
                         </div>
 
-                        <div>
-                            <button onClick={()=> claimShift(val.shiftID)}>Claim</button>
-                        </div>
-                    </div>
-
-                )
-            })}
+                    )
+                })}
+            </div>
         </div>
       );
 }

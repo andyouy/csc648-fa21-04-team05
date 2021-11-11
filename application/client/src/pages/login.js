@@ -48,38 +48,38 @@ function Login ({ updateUserState,updateLoginState}) {
     }
 
     return(
+        <div className="content-wrap">
+            <form onSubmit={loginHandler}>
+                <h1>Login</h1>
 
-        <form onSubmit={loginHandler}>
-            <h1>Login</h1>
+                <label>
+                User ID:
+                <input
+                name="User ID"
+                placeholder='User ID'
+                type='text'
+                value={userID}
+                onChange={e => setUserID(e.target.value)}
+                />
+                </label>
+                <label>
+                Password:
+                <input
+                name="Password"
+                placeholder='Password'
+                type='password'
+                value={password}
+                onChange={e => setPassword(e.target.value)}
+                />
+                </label>
 
-            <label>
-            User ID:
-            <input
-            name="User ID"
-            placeholder='User ID'
-            type='text'
-            value={userID}
-            onChange={e => setUserID(e.target.value)}
-            />
-            </label>
-            <label>
-            Password:
-            <input
-            name="Password"
-            placeholder='Password'
-            type='password'
-            value={password}
-            onChange={e => setPassword(e.target.value)}
-            />
-            </label>
+                <br/>
 
-            <br/>
+                <button className="btn btn-submit"onClick={() => setLoading(true)}>Login</button>
+                <ClipLoader loading={loading} size={150} />
 
-            <button onClick={() => setLoading(true)}>Login</button>
-            <ClipLoader loading={loading} size={150} />
-
-        </form>
-
+            </form>
+        </div>
 
 
     )

@@ -45,7 +45,7 @@ function CreateEmployerAccount () {
     return (
 <div className="content-wrap">
     <form onSubmit={submitHandler}>
-        <h1>Create Employee Account</h1>
+        <h1>Create Company Account</h1>
 
         <label>
             Full Name:
@@ -97,7 +97,7 @@ function CreateEmployerAccount () {
             onChange={e => setConfirmPassword(e.target.value)}
             />
         </label>
-        <button>Create Employer Account</button>
+        <button className="submit">Create Employer Account</button>
        
     
         </form>

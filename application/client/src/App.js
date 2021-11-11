@@ -3,19 +3,20 @@ import { useEffect, useState} from 'react';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import "./pages/aboutUs"
+
 import './assets/App.css';
 
 import Home from './pages/home';
-import AboutUs from './pages/aboutUs';
-import MainCreateAccount from './pages/mainCreateAccount';
-import Login from './pages/login';
 
+import AboutUs from './pages/aboutUs';
 import James from './pages/AboutUs/James';
 import Mohammad from './pages/AboutUs/Mohammad';
 import Ana from './pages/AboutUs/Ana';
 import Andy from './pages/AboutUs/Andy';
 import Courtney from './pages/AboutUs/Courtney';
+
+import MainCreateAccount from './pages/mainCreateAccount';
+import Login from './pages/login';
 
 import EmployerDashboard from './pages/employerDashboard';
 import EmployeeDashboard from './pages/employeeDashboard';
@@ -27,6 +28,7 @@ import FindShyft from './pages/findShyft';
 import EmployeeFind from './pages/employeeFind';
 import EmployeeViews from './pages/employeeViews';
 import EmployerViews from './pages/employerViews';
+
 
 function App() {
   const [loggedInUser,setloggedInUser] = useState(null);
@@ -81,6 +83,7 @@ function App() {
           <Route path='/employeeDashboard' component={EmployeeDashboard}></Route>
           <Route path='/createShyft' component={CreateShyft}></Route>
           <Route path='/findShyft' component={FindShyft}></Route>
+          {/* <Route path='/shyfts' component={Shyfts}></Route> */}
 
           <Route path='/employeeViews' component={EmployeeViews}></Route>
           <Route path='/employeeFind' component={EmployeeFind}></Route>

@@ -1,4 +1,5 @@
 import React from 'react';
+import logo from '../assets/logo.png';
 
 function Home() {
 
@@ -6,11 +7,12 @@ function Home() {
     <div className="content-wrap">
 
       <div className="masthead">
-        <h1> HOME </h1>
+        <h1> WELCOME </h1>
+        <hr/>
       </div>
 
-      <div className="carousel">
-        
+      <div className="container">
+        <img src={logo}/>
       </div>
 
     </div>

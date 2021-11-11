@@ -23,6 +23,10 @@ const Shifts = sequelize.define("shifts", {
         type: Sequelize.STRING(45),
         allowNull: false
     },
+    minPay: {
+        type: Sequelize.STRING(5),
+        allowNull: false
+    },
     createdBy: {
         type: Sequelize.STRING(128),
         allowNull: false

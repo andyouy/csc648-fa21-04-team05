@@ -9,6 +9,10 @@ function CreateShyft(){
     const [location, setLocation] = useState('');
     const [time, setTime] = useState('');
     const [date, setDate] = useState('');
+    const [minPay, setMinPay] = useState('');
+
+    // add error handling
+
 
     let history = useHistory();
 
@@ -19,9 +23,11 @@ function CreateShyft(){
             location,
             time,
             date,
+            minPay
         })
         .then(response => {
             if(response){
+                // refreshes page on click
                 history.go(0);
             }
         });
@@ -67,10 +73,11 @@ function CreateShyft(){
       })
       
     return(
+    <div className="content-wrap">
     <form onSubmit={submitHandler}>
         <h1>Create Shyft</h1>
         <label>
-            Shift:
+            Position:
             <input
             name="Title"
             placeholder="Shift"
@@ -90,7 +97,7 @@ function CreateShyft(){
             />
         </label>
         <label>
-            Time:
+            Start Time:
             <input
             name="Time"
             placeholder="Time"
@@ -108,10 +115,20 @@ function CreateShyft(){
             onChange={e => setDate(e.target.value)}
             />
         </label>
-    <button>Create Shift</button>
+        <label>
+            Base: $
+            <input
+            name="pay"
+            placeholder="Per Shift"
+            type='text'
+            value={minPay}
+            onChange={e => setMinPay(e.target.value)}
+            />
+        </label>
+    <button className="btn btn-submit">Create Shift</button>
     </form>
-    
-    )
+    </div>
+)
       
 }
 
