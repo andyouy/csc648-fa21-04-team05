@@ -9,10 +9,10 @@ function MainCreateAccount() {
     <p>Select Account Type: </p>
 
     <Link to="/employeeAccount">
-    <button ><span><h3>Employee</h3></span></button>
+    <button className="btn-choice"><span><h3>Employee</h3></span></button>
     </Link>
     <Link to="/employerAccount">
-    <button ><span><h3>Employer</h3></span></button>
+    <button className="btn-choice"><span><h3>Employer</h3></span></button>
     </Link>
     </div>
   );
