@@ -76,6 +76,7 @@ function CreateShyft(){
     <div className="content-wrap">
     <form onSubmit={submitHandler}>
         <h1>Create Shyft</h1>
+        <hr/><br/>
         <label>
             Position:
             <input
@@ -87,10 +88,10 @@ function CreateShyft(){
             />
         </label>
         <label>
-            Location:
+            Address:
             <input
             name="Location"
-            placeholder="Location"
+            placeholder="Business Location"
             type='text'
             value={location}
             onChange={e => setLocation(e.target.value)}
@@ -126,6 +127,7 @@ function CreateShyft(){
             />
         </label>
     <button className="btn btn-submit">Create Shift</button>
+    <p>user interface response</p>
     </form>
     </div>
 )

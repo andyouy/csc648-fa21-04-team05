@@ -48,7 +48,7 @@ function CreateEmployerAccount () {
         <h1>Create Company Account</h1>
 
         <label>
-            Full Name:
+            Business Name:
             <input
             name="Full Name"
             placeholder='Full Name'
@@ -97,7 +97,7 @@ function CreateEmployerAccount () {
             onChange={e => setConfirmPassword(e.target.value)}
             />
         </label>
-        <button className="submit">Create Employer Account</button>
+        <button className="btn-submit">Create Account</button>
        
     
         </form>

@@ -2,7 +2,7 @@ import React from 'react';
 import {  Link } from "react-router-dom";
 import axios from 'axios';
 import {  useHistory } from "react-router-dom";
-// import Logo from '../assets/logo.png';
+import Logo from '../assets/logo.png';
 
 const Navbar = ({loggedIn,updateUserState, updateLoginState}, props) => {
 
@@ -24,19 +24,20 @@ const Navbar = ({loggedIn,updateUserState, updateLoginState}, props) => {
     return(
       
       <nav className="navbar">     
-        {/* <a href="home.html"><img src={Logo} id="logo"></img></a> */}
-        {/* <a href="home.html"><img src={Logo} id="logo"></img></a> */}
-        <a id='logo'><Link to="/">Shyft</Link></a>
-        <ul className="navbar-nav"> {props.children} </ul>
+        <Link to="/" className="logo">Shyft</Link>
         
+
+
         <ul className="navbar-nav">
-          <Link to="/">Home</Link>
+        <Link to="/">Home</Link>
+
+            {/* <Link to="/aboutUs">About Us</Link> */}
         </ul>
-        <ul className="navbar-nav">
-            <Link to="/aboutUs">About Us</Link>
-        </ul>
-        <ul className="navbar-nav">
+        {/* <ul className="navbar-nav">
             <Link to="/mainCreateAccount">Create Account</Link>
+        </ul> */}
+        <ul className="navbar-nav">
+          {!loggedIn ? <Link to="/aboutUs">About Us</Link> : <Link to="/employerDashboard" onClick={logoutHandler}> Dashboard</Link>}
         </ul>
         <ul className="navbar-nav">
           {!loggedIn ? <Link to="/login">Login</Link> : <Link to="/" onClick={logoutHandler}> Logout</Link>}

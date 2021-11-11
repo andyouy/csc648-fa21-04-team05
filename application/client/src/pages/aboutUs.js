@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 function AboutUs() {
     return(
     <div className="content-wrap"> 
-        <h1>Team 5 - About Us</h1>
+        <h1>Shyft Team</h1><hr/>
 
         <Link to="/James">
             <button className="btn-choice"><span><h3>James Giatpaiboon</h3></span></button>
