@@ -71,5 +71,41 @@ router.post('/api/newEmployerAccount', (req, res) => {
      res.status(200).json("sucessfully created shift")
  })
 
+ router.post('/api/getShifts', (req, res) => {
+    console.log(req.body);
+    console.log(req.session)
+    Shifts.findAll({
+        where: {
+            createdBy: req.body.username
+        }
+    }).then((results) => {
+        console.log(results)
+        res.status(200).json(results)
+    })
+})
+
+router.put('/api/claimShift', (req, res) => {
+    const id = req.body.id;
+    Shifts.update(
+        {claimedBy: req.session.username},
+        {where: {shiftID: id}}
+    ).then((results) => {
+        if(results){
+            console.log(results)
+            res.status(200).json("Successfully claimed")
+        }
+    })
+})
+
+router.delete('/api/deleteShift/:id', (req, res) => {
+    Shifts.destroy({
+        where: {shiftID: req.params.id}
+    }).then((results) => {
+        if(results) {
+            res.status(200).json("Successfully delete")
+        }
+    })
+})
+
  
  module.exports = router;

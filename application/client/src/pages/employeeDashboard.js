@@ -8,11 +8,11 @@ return(
     <div className="content-wrap">
         <h1>Dashboard</h1>
 
-            <Link to="/createShyft">
-                <button ><span><h3>Pick Up Shyft</h3></span></button>
+            <Link to="/employeeFind">
+                <button ><span><h3>Pick Up</h3></span></button>
             </Link>
-            <Link to="/createShyft">
-                <button ><span><h3>Scheduled Shyfts</h3></span></button>
+            <Link to="/employeeViews">
+                <button ><span><h3>View Scheduled</h3></span></button>
             </Link>
     </div>
 )

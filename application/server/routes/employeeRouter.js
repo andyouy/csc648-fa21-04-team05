@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 var bcrypt = require('bcrypt');
 const Users = require("../models/Users");
+const Shifts = require('../models/Shifts');
 
 const regex = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W)/;
 
@@ -56,6 +57,45 @@ const regex = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W)/;
    })
 })
 
+//gets all unclaimed shifts
+router.get("/api/getAllShifts", (req, res) => {
+    Shifts.findAll({
+        where:{
+            claimedBy: null
+        }
+    })
+    .then((results) => {
+        console.log(results)
+        res.status(200).json(results)
+    })
+})
+
+//gets claimed shifts
+router.post('/api/getClaimedShifts', (req, res) => {
+    console.log(req.body);
+    console.log(req.session)
+    Shifts.findAll({
+        where: {
+            claimedBy: req.body.username
+        }
+    }).then((results) => {
+        console.log(results)
+        res.status(200).json(results)
+    })
+})
+
+router.put('/api/dropShift', (req, res) => {
+    const id = req.body.id;
+    Shifts.update(
+        {claimedBy: null},
+        {where: {shiftID: id}}
+    ).then((results) => {
+        if(results){
+            console.log(results)
+            res.status(200).json("Successfully claimed")
+        }
+    })
+})
 
 
 module.exports = router;

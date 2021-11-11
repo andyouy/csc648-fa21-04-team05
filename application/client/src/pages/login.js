@@ -22,7 +22,7 @@ function Login ({ updateUserState,updateLoginState}) {
                 },{withCredentials:true})
                 .then(response => {
                     if(response.data){
-                        updateUserState(response.data);
+                        updateUserState(response.data.username);
                         updateLoginState("true");
                         setLoading(!loading)
 
