@@ -29,9 +29,6 @@ import EmployeeFind from './pages/employeeFind';
 import EmployeeViews from './pages/employeeViews';
 import EmployerViews from './pages/employerViews';
 
-import Shyfts from './pages/Shyfts';
-
-
 
 function App() {
   const [loggedInUser,setloggedInUser] = useState(null);
@@ -86,7 +83,7 @@ function App() {
           <Route path='/employeeDashboard' component={EmployeeDashboard}></Route>
           <Route path='/createShyft' component={CreateShyft}></Route>
           <Route path='/findShyft' component={FindShyft}></Route>
-          <Route path='/shyfts' component={Shyfts}></Route>
+          {/* <Route path='/shyfts' component={Shyfts}></Route> */}
 
           <Route path='/employeeViews' component={EmployeeViews}></Route>
           <Route path='/employeeFind' component={EmployeeFind}></Route>
