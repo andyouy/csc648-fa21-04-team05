@@ -5,16 +5,15 @@ import { Link } from "react-router-dom";
 function EmployeeDashboard(){
 
 return(
-    <div>
+    <div className="content-wrap">
         <h1>Dashboard</h1>
 
             <Link to="/createShyft">
-                <button ><span><h3>Find Shyft</h3></span></button>
+                <button ><span><h3>Pick Up Shyft</h3></span></button>
             </Link>
             <Link to="/createShyft">
-                <button ><span><h3>View Shyfts</h3></span></button>
+                <button ><span><h3>Scheduled Shyfts</h3></span></button>
             </Link>
-           
     </div>
 )
 
