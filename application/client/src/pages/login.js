@@ -75,7 +75,7 @@ function Login ({ updateUserState,updateLoginState}) {
 
                 <br/>
 
-                <button onClick={() => setLoading(true)}>Login</button>
+                <button className="btn btn-submit"onClick={() => setLoading(true)}>Login</button>
                 <ClipLoader loading={loading} size={150} />
 
             </form>

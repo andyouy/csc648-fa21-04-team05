@@ -6,7 +6,8 @@ function Home() {
     <div className="content-wrap">
 
       <div className="masthead">
-        <h1> HOME </h1>
+        <h1> WELCOME </h1>
+        <hr/>
       </div>
 
       <div className="container">

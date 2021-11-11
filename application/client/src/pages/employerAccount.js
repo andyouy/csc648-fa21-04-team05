@@ -45,7 +45,7 @@ function CreateEmployerAccount () {
     return (
 <div className="content-wrap">
     <form onSubmit={submitHandler}>
-        <h1>Create Employee Account</h1>
+        <h1>Create Employer Account</h1>
 
         <label>
             Full Name:

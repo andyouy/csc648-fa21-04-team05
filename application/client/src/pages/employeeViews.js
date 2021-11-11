@@ -27,31 +27,31 @@ function EmployeeViews() {
     }
 
 
-      return(
-        <div className="content-wrap">
-            <div className="shifts">
-                <h3>Claimed Shifts</h3>
-                <br></br>
-                {shifts.map((val,key) =>
-                {
-                    return (
-                        <div className="shift">
-                            <div>
-                                <h3>title: {val.title}</h3>
-                                <h3>location: {val.location}</h3>
-                                <h3>time: {val.time}</h3>
-                                <h3>date: {val.date}</h3>
-                                <h3>min pay: {val.minPay}</h3>
-
-                            </div>
-
-                            <button onClick={()=> dropShift(val.shiftID)}>Drop Shift</button>
+    return(
+    <div className="content-wrap">
+        <div className="shifts">
+            <h1>Claimed Shifts</h1>
+            <hr />
+            <br></br>
+            {shifts.map((val,key) =>
+            {
+                return (
+                    <div className="shift">
+                        <div className="shift-details">
+                            <h2>${val.minPay}.00 + tips</h2>
+                            <h3>position: {val.title} @ {val.createdBy} </h3>
+                            <h3>address: {val.location}</h3>
+                            <h3>time: {val.time}</h3>
+                            <h3>date: {val.date}</h3>
                         </div>
 
-                    )
-                })}
-            </div>
+                        <button onClick={()=> dropShift(val.shiftID)}>Drop Shift</button>
+                    </div>
+
+                )
+            })}
         </div>
+    </div>
       );
 }
 
