@@ -9,7 +9,7 @@ function Home() {
         <h1> HOME </h1>
       </div>
 
-      <div className="carousel">
+      <div className="container">
         
       </div>
 
