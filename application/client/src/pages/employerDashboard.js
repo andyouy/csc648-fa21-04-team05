@@ -11,11 +11,8 @@ return(
             <Link to="/createShyft">
                 <button ><span><h3>Create Shift</h3></span></button>
             </Link>
-            <Link to ="/createShyft">
-                <button ><span><h3>Drop Shift</h3></span></button>
-            </Link>
             <Link to="/employerViews">
-                <button ><span><h3>View Shyfts</h3></span></button>
+                <button ><span><h3>Open Shifts</h3></span></button>
             </Link>
            
     </div>
