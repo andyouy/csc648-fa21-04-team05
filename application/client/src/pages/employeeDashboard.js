@@ -8,10 +8,10 @@ return(
     <div>
         <h1>Dashboard</h1>
 
-            <Link to="/createShyft">
+            <Link to="/employeeFind">
                 <button ><span><h3>Find Shyft</h3></span></button>
             </Link>
-            <Link to="/createShyft">
+            <Link to="/employeeViews">
                 <button ><span><h3>View Shyfts</h3></span></button>
             </Link>
            
