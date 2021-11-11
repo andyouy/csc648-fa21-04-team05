@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 function EmployerDashboard(){
 
 return(
-    <div>
+    <div className="content-wrap">
         <h1>Dashboard</h1>
 
             <Link to="/createShyft">
