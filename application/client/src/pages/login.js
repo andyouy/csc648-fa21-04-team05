@@ -77,7 +77,7 @@ function Login ({ updateUserState,updateLoginState}) {
 
                 <button className="btn btn-submit"onClick={() => setLoading(true)}>Login</button>
                 <ClipLoader loading={loading} size={150} />
-
+                <p>New user?<a href="./mainCreateAccount"> Sign up here.</a></p>
             </form>
         </div>
 

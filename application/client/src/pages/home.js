@@ -1,5 +1,6 @@
 import React from 'react';
-import logo from '../assets/logo.png';
+import {  Link } from "react-router-dom";
+// import logo from '../assets/logo.png';
 
 function Home() {
 
@@ -12,9 +13,14 @@ function Home() {
       </div>
 
       <div className="container">
-        <img src={logo}/>
+        {/* <img src={logo}/> */}
+        {/* <Link to="/login">
+                <button className="btn btn-choice"><span><h3>Sign In</h3></span></button>
+        </Link>
+        <Link to="/mainCreateAccount">
+            <button className="btn btn-choice"><span><h3>Register</h3></span></button>
+        </Link> */}
       </div>
-
     </div>
   );
 }
