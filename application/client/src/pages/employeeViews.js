@@ -41,6 +41,8 @@ function EmployeeViews() {
                                 <h3>location: {val.location}</h3>
                                 <h3>time: {val.time}</h3>
                                 <h3>date: {val.date}</h3>
+                                <h3>min pay: {val.minPay}</h3>
+
                             </div>
 
                             <button onClick={()=> dropShift(val.shiftID)}>Drop Shift</button>

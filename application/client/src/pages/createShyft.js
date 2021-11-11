@@ -9,6 +9,10 @@ function CreateShyft(){
     const [location, setLocation] = useState('');
     const [time, setTime] = useState('');
     const [date, setDate] = useState('');
+    const [minPay, setMinPay] = useState('');
+
+    // add error handling
+
 
     let history = useHistory();
 
@@ -19,9 +23,11 @@ function CreateShyft(){
             location,
             time,
             date,
+            minPay
         })
         .then(response => {
             if(response){
+                // refreshes page on click
                 history.go(0);
             }
         });
@@ -106,6 +112,16 @@ function CreateShyft(){
             placeholder="Date"
             type='date'
             onChange={e => setDate(e.target.value)}
+            />
+        </label>
+        <label>
+            MinPay:
+            <input
+            name="pay"
+            placeholder="MinPay"
+            type='text'
+            value={minPay}
+            onChange={e => setMinPay(e.target.value)}
             />
         </label>
     <button>Create Shift</button>

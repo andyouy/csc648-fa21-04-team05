@@ -44,7 +44,7 @@ function CreateEmployeeAccount () {
         })
     }
     
-    const [users, setUsers] = useState("");
+    // const [users, setUsers] = useState("");
 
     return (
         <div className="content-wrap">
