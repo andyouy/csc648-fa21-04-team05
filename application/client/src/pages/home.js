@@ -1,4 +1,5 @@
 import React from 'react';
+import logo from '../assets/logo.png';
 
 function Home() {
 
@@ -11,7 +12,7 @@ function Home() {
       </div>
 
       <div className="container">
-        
+        <img src={logo}/>
       </div>
 
     </div>

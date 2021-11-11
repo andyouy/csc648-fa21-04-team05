@@ -73,10 +73,11 @@ function CreateShyft(){
       })
       
     return(
+    <div className="content-wrap">
     <form onSubmit={submitHandler}>
         <h1>Create Shyft</h1>
         <label>
-            Shift:
+            Position:
             <input
             name="Title"
             placeholder="Shift"
@@ -96,7 +97,7 @@ function CreateShyft(){
             />
         </label>
         <label>
-            Time:
+            Start Time:
             <input
             name="Time"
             placeholder="Time"
@@ -115,19 +116,19 @@ function CreateShyft(){
             />
         </label>
         <label>
-            MinPay:
+            Base: $
             <input
             name="pay"
-            placeholder="MinPay"
+            placeholder="Per Shift"
             type='text'
             value={minPay}
             onChange={e => setMinPay(e.target.value)}
             />
         </label>
-    <button>Create Shift</button>
+    <button className="btn btn-submit">Create Shift</button>
     </form>
-    
-    )
+    </div>
+)
       
 }
 
