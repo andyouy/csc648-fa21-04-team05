@@ -56,7 +56,6 @@ function App() {
     localStorage.setItem("username", JSON.stringify(loggedInUser))
   });
 
-
   return (
     <div className="page-container">
     
@@ -82,9 +81,11 @@ function App() {
           <Route path='/employeeDashboard' component={EmployeeDashboard}></Route>
           <Route path='/createShyft' component={CreateShyft}></Route>
           <Route path='/findShyft' component={FindShyft}></Route>
+
           <Route path='/employeeViews' component={EmployeeViews}></Route>
           <Route path='/employeeFind' component={EmployeeFind}></Route>
           <Route path='/employerViews' component={EmployerViews}></Route>
+
 
         </Switch>
 
