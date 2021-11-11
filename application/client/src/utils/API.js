@@ -14,7 +14,7 @@ export default {
     return axios.delete("/api/shifts/" + id);
   },
   // Saves a shift to the database
-  saveShyft: function(shiftData) {
+  saveShift: function(shiftData) {
     return axios.post("/api/shifts", shiftData);
   }
 };
