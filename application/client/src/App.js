@@ -24,11 +24,12 @@ import CreateEmployerAccount from './pages/employerAccount';
 import Jaguar from './pages/AboutUs/Jaguar';
 import CreateShyft from './pages/createShyft';
 import FindShyft from './pages/findShyft';
-
-
+import EmployeeFind from './pages/employeeFind';
+import EmployeeViews from './pages/employeeViews';
+import EmployerViews from './pages/employerViews';
 
 function App() {
-  const [loggedInUser,setloggedInUser] = useState();
+  const [loggedInUser,setloggedInUser] = useState(null);
   const [loggedIn, setLoggedIn] = useState(null);
 
   function updateLoginState(data){
@@ -44,10 +45,15 @@ function App() {
     if(data) {
       setLoggedIn(JSON.parse(data))
     }
+    const newdata = localStorage.getItem("username")
+    if(data) {
+      setloggedInUser(JSON.parse(newdata))
+    }
   }, []);
 
   useEffect(() => {
     localStorage.setItem("loggedIn", JSON.stringify(loggedIn))
+    localStorage.setItem("username", JSON.stringify(loggedInUser))
   });
 
   return (
@@ -75,6 +81,11 @@ function App() {
           <Route path='/employeeDashboard' component={EmployeeDashboard}></Route>
           <Route path='/createShyft' component={CreateShyft}></Route>
           <Route path='/findShyft' component={FindShyft}></Route>
+
+          <Route path='/employeeViews' component={EmployeeViews}></Route>
+          <Route path='/employeeFind' component={EmployeeFind}></Route>
+          <Route path='/employerViews' component={EmployerViews}></Route>
+
 
         </Switch>
 
