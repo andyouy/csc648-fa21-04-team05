@@ -82,11 +82,17 @@ class Shyfts extends Component {
                 name="location"
                 placeholder="Location (required)"
               />
-              <TextArea
+              <Input
                 value={this.state.startTime}
                 onChange={this.handleInputChange}
-                name="startTime"
+                name="time"
                 placeholder="Start Time (optional)"
+              />
+              <Input
+                value={this.state.pay}
+                onChange={this.handleInputChange}
+                name="pay"
+                placeholder="Pay (required)"
               />
               <Input
                 value={this.state.pay}

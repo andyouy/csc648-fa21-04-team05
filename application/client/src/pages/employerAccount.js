@@ -97,7 +97,7 @@ function CreateEmployerAccount () {
             onChange={e => setConfirmPassword(e.target.value)}
             />
         </label>
-        <button>Create Employer Account</button>
+        <button className="submit">Create Employer Account</button>
        
     
         </form>
