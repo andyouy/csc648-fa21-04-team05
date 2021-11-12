@@ -93,6 +93,8 @@ button:active {
 .btn-action{
   width: 42%;
   height: 100%;
+  background-color: red;
+  padding: 7% 1%;
 }
 
 form {
@@ -160,7 +162,6 @@ input {
   border: 1px white dashed;
 
 }
-
 
 .main-footer {
   position: relative;

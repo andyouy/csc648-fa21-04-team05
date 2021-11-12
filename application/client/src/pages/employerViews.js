@@ -49,9 +49,8 @@ function EmployerViews() {
                                 <h3>start time: {val.time}</h3>
                                 <h3>address: {val.location}</h3>
                             </div>
-
                             <div className="card-actions">
-                                <button className="btn-action" onClick={()=> deleteShift(val.shiftID)}>Edit(still delete)</button>
+                                <button className="btn-action" onClick={()=> deleteShift(val.shiftID)}>Delete</button>
                                 <button className="btn-action" onClick={()=> deleteShift(val.shiftID)}>Delete</button>
                             </div>
                         </div>

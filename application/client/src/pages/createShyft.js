@@ -4,15 +4,16 @@ import axios from 'axios';
 
 function CreateShyft(){
 
-    const [Shifts, setShifts] = useState([]);
+    // const [Shifts, setShifts] = useState([]);
     const [shiftTitle, setShiftTitle] = useState('');
     const [location, setLocation] = useState('');
     const [time, setTime] = useState('');
     const [date, setDate] = useState('');
     const [minPay, setMinPay] = useState('');
+    
+    // NEW a/o 11/11
 
     // add error handling
-
 
     let history = useHistory();
 
@@ -34,23 +35,23 @@ function CreateShyft(){
         });
     }
 
-    const DeleteHandler = async (e) => {
-        axios.delete(`/deleteShift`, {
-            shiftTitle,
-            location,
-            time,
-            date,
-        });
-       }
+    // const DeleteHandler = async (e) => {
+    //     axios.delete(`/deleteShift`, {
+    //         shiftTitle,
+    //         location,
+    //         time,
+    //         date,
+    //     });
+    //    }
 
-       const ViewHandler = async (e) => {
-        axios.put(`/viewShift`, {
-            shiftTitle,
-            location,
-            time,
-            date,
-        });
-      }
+    //    const ViewHandler = async (e) => {
+    //     axios.put(`/viewShift`, {
+    //         shiftTitle,
+    //         location,
+    //         time,
+    //         date,
+    //     });
+    //   }
 
 
     // var list = Shifts.map(function(shift){
