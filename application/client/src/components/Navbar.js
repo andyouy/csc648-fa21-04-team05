@@ -2,7 +2,7 @@ import React from 'react';
 import {  Link } from "react-router-dom";
 import axios from 'axios';
 import {  useHistory } from "react-router-dom";
-import Logo from '../assets/logo.png';
+// import Logo from '../assets/logo.png';
 
 const Navbar = ({loggedIn,updateUserState, updateLoginState}, props) => {
 
@@ -31,13 +31,10 @@ const Navbar = ({loggedIn,updateUserState, updateLoginState}, props) => {
         <ul className="navbar-nav">
         <Link to="/">Home</Link>
 
-            {/* <Link to="/aboutUs">About Us</Link> */}
         </ul>
-        {/* <ul className="navbar-nav">
-            <Link to="/mainCreateAccount">Create Account</Link>
-        </ul> */}
+
         <ul className="navbar-nav">
-          {!loggedIn ? <Link to="/aboutUs">About Us</Link> : <Link to="/employerDashboard" onClick={logoutHandler}> Dashboard</Link>}
+          {!loggedIn ? <Link to="/aboutUs">About Us</Link> : <Link to="/aboutUs" hidden="true"></Link>}
         </ul>
         <ul className="navbar-nav">
           {!loggedIn ? <Link to="/login">Login</Link> : <Link to="/" onClick={logoutHandler}> Logout</Link>}

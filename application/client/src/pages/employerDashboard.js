@@ -6,13 +6,13 @@ function EmployerDashboard(){
 
 return(
     <div className="content-wrap">
-        <h1>Dashboard</h1>
+        <h1>Dashboard</h1><hr/>
 
             <Link to="/createShyft">
-                <button ><span><h3>Create Shift</h3></span></button>
+                <button className="btn-choice"><span><h3>Create Shift</h3></span></button>
             </Link>
             <Link to="/employerViews">
-                <button ><span><h3>Open Shifts</h3></span></button>
+                <button className="btn-choice"><span><h3>Open Shifts</h3></span></button>
             </Link>
            
     </div>
