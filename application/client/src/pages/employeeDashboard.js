@@ -4,50 +4,49 @@ import { useHistory, Link } from "react-router-dom";
 import axios from "axios";
 
 
-function EmployeeDashboard(){
+function EmployeeDashboard() {
 
     const [users, setUsers] = useState([]);
 
+    let history = useHistory;
+
+    // const dashboardRouter = (id) => {
+    //     axios.get("/api/login", {withCredentials: true}).then((response) =>{
+    //       updateUserState(response.data.isBusinessAccount);
+    //       updateLoginState(null);
+    //       history.go(0);
+    //     })
+    //     .catch((err) =>{
+    //       console.log(err);
+    //     });
     
-    let history = useHistory();
+    //   }
+    
+    const isBusinessAccount = () => {
+        axios.get(users.map)
+    }
 
-    useEffect(() => {
-    const data = localStorage.getItem("username")
-    axios.post("/api/login", {
-        username: JSON.parse(data)
-    }).then((response) => {
-        setUsers(response.data);
-        console.log(users)
-        })
-    }, []);
-
-
+    
 return(
     <div className="content-wrap">
 
-        <h1>Dashboard</h1><hr/>
+        <h1>Employee Dashboard</h1><hr/>
 
-        {users.map((val,key) =>
-                {
-                    return (
-                        <div className="shift-list">
-                            <div className="shift-list-item" id="details-list-view">
-                                <h3>{val.createdBy} </h3> 
-                                </div>  
-             
+        {/* {!isBusinessAccount ? */}
+            <Link to="/employeeFind"><button className="btn-choice"><span><h3>Claim Shift</h3></span></button></Link>
+            {/* : */}
+            {/* <Link to="/createShyft"><button className="btn-choice"><span><h3>Create Shift</h3></span></button></Link> */}
+        {/* } */}
 
+        {/* {!isBusinessAccount ? */}
+            <Link to="/employeeViews"><button className="btn-choice"><span><h3>View Claimed</h3></span></button></Link>
+            {/* : */}
+            {/* <Link to="/employerViews"><button className="btn-choice"><span><h3>View Unclaimed</h3></span></button></Link> */}
+        {/* } */}
 
-                        </div>
+            {/* {!isBusinessAccount ? <Link to="/login">Login</Link> : <Link to="/" onClick={dashboardRouter}> Logout</Link>}
+            {!isBusinessAccount ? <Link to="/login">Login</Link> : <Link to="/" onClick={dashboardRouter}> Logout</Link>} */}
 
-                    )
-                })}
-
-            <Link to="/employeeFind">
-                <button className="btn btn-choice"><span><h3>Pick Up</h3></span></button>
-            </Link>
-            <Link to="/employeeViews">
-                <button className="btn btn-choice"><span><h3>View Scheduled</h3></span></button>
-            </Link>
     </div>
 )
 

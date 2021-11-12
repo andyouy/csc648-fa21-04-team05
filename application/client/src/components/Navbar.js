@@ -2,12 +2,10 @@ import React from 'react';
 import {  Link } from "react-router-dom";
 import axios from 'axios';
 import {  useHistory } from "react-router-dom";
-// import Logo from '../assets/logo.png';
 
-const Navbar = ({loggedIn,updateUserState, updateLoginState}, props) => {
+const Navbar = ({loggedIn, updateUserState, updateLoginState}) => {
 
     let history = useHistory;
-    const logo = require('../assets/logo.png');
 
     const logoutHandler = () => {
         axios.post("/api/logout", {withCredentials: true}).then((response) =>{
@@ -26,16 +24,14 @@ const Navbar = ({loggedIn,updateUserState, updateLoginState}, props) => {
       <nav className="navbar">     
         <Link to="/" className="logo">Shyft</Link>
         
-
-
         <ul className="navbar-nav">
         <Link to="/">Home</Link>
 
         </ul>
 
-        <ul className="navbar-nav">
-          {!loggedIn ? <Link to="/aboutUs">About Us</Link> : <Link to="/aboutUs" hidden="true"></Link>}
-        </ul>
+        {/* <ul className="navbar-nav">
+          {!loggedIn ? <Link to="/">Home</Link> : <Link to="/" hidden="true"></Link>}
+        </ul> */}
         <ul className="navbar-nav">
           {!loggedIn ? <Link to="/login">Login</Link> : <Link to="/" onClick={logoutHandler}> Logout</Link>}
         </ul>

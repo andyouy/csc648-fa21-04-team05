@@ -83,9 +83,7 @@ button:active {
   width: 100%;
   padding: 5%;
   margin-top: 4vh;
-  margin-bottom: 4vh;
 }
-
 
 .btn-choice {
   min-width: 42%;
@@ -94,6 +92,7 @@ button:active {
 
 .btn-action{
   width: 42%;
+  height: 100%;
 }
 
 form {
