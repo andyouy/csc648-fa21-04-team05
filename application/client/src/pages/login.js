@@ -49,11 +49,10 @@ function Login ({ updateUserState,updateLoginState}) {
 
     return(
         <div className="content-wrap">
-            <form onSubmit={loginHandler}>
+            <form className="login-form" onSubmit={loginHandler}>
                 <h1>Login</h1>
 
-                <label>
-                User ID:
+                <label>Shyft User ID:</label>
                 <input
                 name="User ID"
                 placeholder='User ID'
@@ -61,9 +60,8 @@ function Login ({ updateUserState,updateLoginState}) {
                 value={userID}
                 onChange={e => setUserID(e.target.value)}
                 />
-                </label>
-                <label>
-                Password:
+
+                <label>Shyft Password:</label>
                 <input
                 name="Password"
                 placeholder='Password'
@@ -71,11 +69,10 @@ function Login ({ updateUserState,updateLoginState}) {
                 value={password}
                 onChange={e => setPassword(e.target.value)}
                 />
-                </label>
 
                 <br/>
 
-                <button className="btn btn-submit"onClick={() => setLoading(true)}>Login</button>
+                <button className="btn-submit" onClick={() => setLoading(true)}>Login</button>
                 <ClipLoader loading={loading} size={150} />
                 <p>New user?<a href="./mainCreateAccount"> Sign up here.</a></p>
             </form>
