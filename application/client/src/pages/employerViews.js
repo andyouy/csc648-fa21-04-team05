@@ -26,6 +26,14 @@ function EmployerViews() {
     //     })
     // },[]);
 
+    // const seeAllShifts = () => {
+    //     axios.get("/api/getShifts", {
+    //         username: JSON.parse(data)
+    //     }).then((response)=>{
+    //         get
+    //     })
+    // }
+    
     const deleteShift = (id) => {
         axios.delete(`/api/deleteShift/${id}`).then((response) => {
           if(response){
