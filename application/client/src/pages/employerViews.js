@@ -26,6 +26,14 @@ function EmployerViews() {
     //     })
     // },[]);
 
+    // const seeAllShifts = () => {
+    //     axios.get("/api/getShifts", {
+    //         username: JSON.parse(data)
+    //     }).then((response)=>{
+    //         get
+    //     })
+    // }
+    
     const deleteShift = (id) => {
         axios.delete(`/api/deleteShift/${id}`).then((response) => {
           if(response){
@@ -49,9 +57,8 @@ function EmployerViews() {
                                 <h3>start time: {val.time}</h3>
                                 <h3>address: {val.location}</h3>
                             </div>
-
                             <div className="card-actions">
-                                <button className="btn-action" onClick={()=> deleteShift(val.shiftID)}>Edit(still delete)</button>
+                                <button className="btn-action" onClick={()=> deleteShift(val.shiftID)}>Delete</button>
                                 <button className="btn-action" onClick={()=> deleteShift(val.shiftID)}>Delete</button>
                             </div>
                         </div>
