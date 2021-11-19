@@ -44,7 +44,7 @@ function EmployeeFind() {
                             </div>
 
                             <div>
-                                <button onClick={()=> claimShift(val.shiftID)}>Claim</button>
+                                <button className="btn-submit" onClick={()=> claimShift(val.shiftID)}>Claim</button>
                             </div>
                         </div>
 

@@ -30,8 +30,7 @@ function EmployeeViews() {
     return(
     <div className="content-wrap">
         <div className="shifts">
-            <h1>Claimed Shifts</h1>
-            <hr />
+            <h1>Scheduled Shifts</h1><hr/>
             <br></br>
             {shifts.map((val,key) =>
             {

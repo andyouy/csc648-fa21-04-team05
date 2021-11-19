@@ -9,6 +9,7 @@ function EmployerViews() {
 
     useEffect(() => {
     const data = localStorage.getItem("username")
+
     axios.post("/api/getShifts", {
         username: JSON.parse(data)
     }).then((response) => {
@@ -17,7 +18,22 @@ function EmployerViews() {
         })
     }, []);
 
+    // const editShift = (id) => {
+    //     axios.post("/api/getShifts", {
+    //         username: JSON.parse(data)
+    //     }).then((response)=> {
 
+    //     })
+    // },[]);
+
+    // const seeAllShifts = () => {
+    //     axios.get("/api/getShifts", {
+    //         username: JSON.parse(data)
+    //     }).then((response)=>{
+    //         get
+    //     })
+    // }
+    
     const deleteShift = (id) => {
         axios.delete(`/api/deleteShift/${id}`).then((response) => {
           if(response){
@@ -28,19 +44,22 @@ function EmployerViews() {
 
       return(
         <div className="content-wrap">
-            <div className="shifts">
+            <h1>Unclaimed Shifts</h1><hr/>
+            <div className="shift-list">
                 {shifts.map((val,key) =>
                 {
                     return (
-                        <div className="shift-emp">
-                            <div>
-                                <h3>{val.title} | {val.date} {val.time} | ${val.minPay}.00</h3>
-
-
+                        <div className="shift">
+                            <div className="list-details">
+                                <p>date: {val.date}</p>
+                                <h2>${val.minPay}.00</h2>
+                                <h3>seeking: {val.title} @ {val.createdBy}</h3>
+                                <h3>start time: {val.time}</h3>
+                                <h3>address: {val.location}</h3>
                             </div>
-
-                            <div>
-                                <button onClick={()=> deleteShift(val.shiftID)}>Delete</button>
+                            <div className="card-actions">
+                                <button className="btn-action" onClick={()=> deleteShift(val.shiftID)}>Delete</button>
+                                <button className="btn-action" onClick={()=> deleteShift(val.shiftID)}>Delete</button>
                             </div>
                         </div>
 

@@ -4,15 +4,16 @@ import axios from 'axios';
 
 function CreateShyft(){
 
-    const [Shifts, setShifts] = useState([]);
+    // const [Shifts, setShifts] = useState([]);
     const [shiftTitle, setShiftTitle] = useState('');
     const [location, setLocation] = useState('');
     const [time, setTime] = useState('');
     const [date, setDate] = useState('');
     const [minPay, setMinPay] = useState('');
+    
+    // NEW a/o 11/11
 
     // add error handling
-
 
     let history = useHistory();
 
@@ -29,53 +30,55 @@ function CreateShyft(){
             if(response){
                 // refreshes page on click
                 history.go(0);
+                // return list;
             }
         });
     }
 
-    const DeleteHandler = async (e) => {
-        axios.delete(`/deleteShift`, {
-            shiftTitle,
-            location,
-            time,
-            date,
-        });
-       }
+    // const DeleteHandler = async (e) => {
+    //     axios.delete(`/deleteShift`, {
+    //         shiftTitle,
+    //         location,
+    //         time,
+    //         date,
+    //     });
+    //    }
 
-       const ViewHandler = async (e) => {
-        axios.put(`/viewShift`, {
-            shiftTitle,
-            location,
-            time,
-            date,
-        });
-      }
+    //    const ViewHandler = async (e) => {
+    //     axios.put(`/viewShift`, {
+    //         shiftTitle,
+    //         location,
+    //         time,
+    //         date,
+    //     });
+    //   }
 
 
-      var list = Shifts.map(function(shift){
-        return(
-          <div className="content-wrap">
-            <h1>Current Shifts</h1> 
-            {shift.data.map(item => 
-                <div class="card">
-                  <div id="shiftTitle">Shift Title: {item.Title}</div>
-                  <div id="shiftLocation">Location: {item.Location}</div>
-                  <div id="shiftTime">Time: {item.Time}</div>
-                  <div id="shiftDate">Date: {item.Date}</div>
+    // var list = Shifts.map(function(shift){
+    // return(
+    //     <div className="content-wrap">
+    //     <h1>Current Shifts</h1> 
+    //     {shift.data.map(item => 
+    //         <div class="card">
+    //             <div id="shiftTitle">Shift Title: {item.Title}</div>
+    //             <div id="shiftLocation">Location: {item.Location}</div>
+    //             <div id="shiftTime">Time: {item.Time}</div>
+    //             <div id="shiftDate">Date: {item.Date}</div>
 
-                  <form onSubmit={DeleteHandler}><button type ='submit' id='view'>Delete Shift</button></form>
-                  <form onSubmit={ViewHandler}><button type ='submit' id='view'>Delete Shift</button></form>
-                  
-                </div>
-            )}
-          </div>
-        )
-      })
+    //             <form onSubmit={DeleteHandler}><button type ='submit' id='view'>Delete Shift</button></form>
+    //             <form onSubmit={ViewHandler}><button type ='submit' id='view'>Delete Shift</button></form>
+                
+    //         </div>
+    //     )}
+    //     </div>
+    // )
+    // })
       
     return(
     <div className="content-wrap">
     <form onSubmit={submitHandler}>
         <h1>Create Shyft</h1>
+        <hr/><br/>
         <label>
             Position:
             <input
@@ -87,10 +90,10 @@ function CreateShyft(){
             />
         </label>
         <label>
-            Location:
+            Address:
             <input
             name="Location"
-            placeholder="Location"
+            placeholder="Business Location"
             type='text'
             value={location}
             onChange={e => setLocation(e.target.value)}
@@ -126,6 +129,7 @@ function CreateShyft(){
             />
         </label>
     <button className="btn btn-submit">Create Shift</button>
+    <p>user interface response</p>
     </form>
     </div>
 )
