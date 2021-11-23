@@ -61,5 +61,14 @@ router.post('/api/login', (req, res, next) => {
 
  })
 
+ router.post('/api/getLoggedIn', (req, res, next) => {
+   Users.findOne({
+     where: {
+       username: req.body.username
+     }
+   }).then(results => {
+     res.status(200).json(results.usertype)
+   })
+ })
  
  module.exports = router;
