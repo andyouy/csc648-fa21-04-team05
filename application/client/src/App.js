@@ -29,6 +29,7 @@ import EmployeeFind from './pages/employeeFind';
 import EmployeeViews from './pages/employeeViews';
 import EmployerViews from './pages/employerViews';
 import EditShyft from './pages/editShyft';
+import ProfilePage from './pages/profilePage';
 
 
 function App() {
@@ -91,6 +92,7 @@ function App() {
           <Route path='/employerViews' component={EmployerViews}></Route>
 
           <Route path='/editShyft/:id' component={EditShyft}></Route>
+          <Route path='/userProfile/:username' component={ProfilePage}></Route>
 
 
         </Switch>
