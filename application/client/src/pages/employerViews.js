@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import {  useHistory } from "react-router-dom";
+import EditShyft from "./editShyft";
 
 function EmployerViews() {
     const [shifts, setShifts] = useState([]);
@@ -26,6 +27,10 @@ function EmployerViews() {
     //     })
     // },[]);
 
+    const editShyftHandler = id => {
+        history.push(`/editShyft/${id}`)
+    }
+
     const deleteShift = (id) => {
         axios.delete(`/api/deleteShift/${id}`).then((response) => {
           if(response){
@@ -41,7 +46,7 @@ function EmployerViews() {
                 {shifts.map((val,key) =>
                 {
                     return (
-                        <div className="shift">
+                        <div id={val.shiftID} key={key} className="shift">
                             <div className="list-details">
                                 <p>date: {val.date}</p>
                                 <h2>${val.minPay}.00</h2>
@@ -50,7 +55,7 @@ function EmployerViews() {
                                 <h3>address: {val.location}</h3>
                             </div>
                             <div className="card-actions">
-                                <button className="btn-action" onClick={()=> deleteShift(val.shiftID)}>Delete</button>
+                                <button className="btn-action" onClick={()=> editShyftHandler(val.shiftID)}>Edit</button>
                                 <button className="btn-action" onClick={()=> deleteShift(val.shiftID)}>Delete</button>
                             </div>
                         </div>
