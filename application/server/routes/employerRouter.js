@@ -61,15 +61,23 @@ router.post('/api/newEmployerAccount', (req, res) => {
      console.log(req.params)
      console.log(req.body);
      console.log(req.session)
-     Shifts.create({
-         title: req.body.shiftTitle,
-         location: req.body.location,
-         time: req.body.time,
-         date: req.body.date,
-         createdBy: req.session.username,
-         minPay: req.body.minPay
-     })
-     res.status(200).json("sucessfully created shift")
+     if(req.body.shiftTitle === "" || 
+        req.body.location === "" || 
+        req.body.time === "" ||
+        req.body.date === "" ||
+        req.body.minPay === ""){
+            res.status(400).json("fields empty")
+        } else {
+            Shifts.create({
+                title: req.body.shiftTitle,
+                location: req.body.location,
+                time: req.body.time,
+                date: req.body.date,
+                createdBy: req.session.username,
+                minPay: req.body.minPay
+            })
+            res.status(200).json("sucessfully created shift")
+        }
  })
 
  router.post('/api/getShifts', (req, res) => {
@@ -108,5 +116,32 @@ router.delete('/api/deleteShift/:id', (req, res) => {
     })
 })
 
+router.post('/api/getEditShift', (req, res) => {
+    Shifts.findOne({
+        where: {
+            shiftID: req.body.id
+        }
+    }).then(results => {
+        console.log(results)
+        res.status(200).json(results)
+    })
+})
  
+router.put('/api/editShift', (req, res) => {
+    Shifts.update(
+        {
+            title: req.body.shiftTitle,
+            location: req.body.location,
+            time: req.body.time,
+            date: req.body.date,
+            minPay: req.body.minPay
+        },
+        {where: {shiftID: req.body.id}}
+    ).then((results) => {
+        if(results){
+            console.log(results)
+            res.status(200).json("Successfully edited")
+        }
+    })
+})
  module.exports = router;

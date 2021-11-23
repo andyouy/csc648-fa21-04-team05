@@ -9,7 +9,10 @@ function Login ({ updateUserState,updateLoginState}) {
     const [password, setPassword] = useState('');
     const [loading, setLoading] = useState(false);
 
+    const [loginError, setLoginError] = useState('')
+
     let history = useHistory();
+
 
     const loginHandler = (event) => {
         event.preventDefault();
@@ -37,12 +40,15 @@ function Login ({ updateUserState,updateLoginState}) {
                     if(error.response.data === "username and password cannot be left empty"){
                         setLoading(!loading)
                         console.log("please enter a username and password");
+                        setLoginError("Incorrect username/password");
                     } else if (error.response.data === "user does not exist"){
                         setLoading(!loading)
                         console.log("please enter a valid username");
+                        setLoginError("Incorrect username/password")
                     } else if (error.response.data === "incorrect password"){
                         setLoading(!loading)
                         console.log("please enter a correct password");
+                        setLoginError("Incorrect username/password")
                     }
                 })
     }
@@ -51,6 +57,7 @@ function Login ({ updateUserState,updateLoginState}) {
         <div className="content-wrap">
             <form className="login-form" onSubmit={loginHandler}>
                 <h1>Login</h1>
+                {loginError ? <p style={{color: "red"}}>{loginError}</p> : null}
 
                 <label>Shyft User ID:</label>
                 <input
