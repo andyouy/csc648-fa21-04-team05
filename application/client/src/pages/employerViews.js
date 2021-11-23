@@ -27,6 +27,7 @@ function EmployerViews() {
     //     })
     // },[]);
 
+
     const editShyftHandler = id => {
         history.push(`/editShyft/${id}`)
     }
