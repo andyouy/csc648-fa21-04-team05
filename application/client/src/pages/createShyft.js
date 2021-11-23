@@ -14,6 +14,7 @@ function CreateShyft(){
     // NEW a/o 11/11
 
     // add error handling
+    const [error, setError] = useState('');
 
     let history = useHistory();
 
@@ -29,8 +30,14 @@ function CreateShyft(){
         .then(response => {
             if(response){
                 // refreshes page on click
-                history.go(0);
+                history.push("/employerViews")
                 // return list;
+            }
+        })
+        .catch(error => {
+            console.log(error.response.data)
+            if(error.response.data === "fields empty"){
+                setError("Please fill out all fields")
             }
         });
     }
@@ -129,7 +136,7 @@ function CreateShyft(){
             />
         </label>
     <button className="btn btn-submit">Create Shift</button>
-    <p>user interface response</p>
+    {error ? <p style={{color: "red"}}>{error}</p> : null}
     </form>
     </div>
 )
