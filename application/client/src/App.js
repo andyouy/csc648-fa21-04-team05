@@ -64,7 +64,7 @@ function App() {
     <div className="page-container">
     
       <Router>
-        <Navbar loggedIn={loggedIn} updateUserState={updateUserState} updateLoginState={updateLoginState} />
+        <Navbar loggedIn={loggedIn} loggedInUser={loggedInUser} updateUserState={updateUserState} updateLoginState={updateLoginState} />
 
         <Switch>
           <Route path='/' exact component={Home} />
