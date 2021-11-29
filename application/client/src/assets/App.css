@@ -127,6 +127,21 @@ button:active {
   color: white;
 }
 
+.btn-edit{
+  width: 42%;
+  height: 100%;
+  background-color: #7991B2;
+  padding: 7% 1%;
+  cursor: pointer;
+  transition-duration: 0.4s;
+}
+
+.btn-edit:hover{
+  background-color: #7991B2;opacity:0.5; 
+  color: white;
+}
+
+
 .btn-claim-shift{
   width: 42%;
   height: 100%;

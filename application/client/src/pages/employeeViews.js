@@ -37,7 +37,7 @@ function EmployeeViews() {
                         <div className="shift">
                             <div className="shift-details">
                                 <h2 class="shift-tile-pay">${val.minPay}.00 + tips</h2>
-                                <h3 class="shift-tile-date">date: {val.date}</h3>
+                                <h3 class="shift-tile-date">Date: {val.date}</h3>
                                 <h3>Position: {val.title} @ {val.createdBy} </h3>
                                 <h3>Address: {val.location}</h3>
                                 <h3>Time: {val.time}</h3>

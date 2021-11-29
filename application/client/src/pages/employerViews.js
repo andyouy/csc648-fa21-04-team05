@@ -55,7 +55,7 @@ function EmployerViews() {
                                 <h3>Address: {val.location}</h3>
                             </div>
                             <div className="card-actions">
-                                <button className="btn-action" onClick={() => editShyftHandler(val.shiftID)}>Edit</button>
+                                <button className="btn-edit" onClick={() => editShyftHandler(val.shiftID)}>Edit</button>
                                 <button className="btn-action" onClick={() => deleteShift(val.shiftID)}>Delete</button>
                             </div>
                         </div>
