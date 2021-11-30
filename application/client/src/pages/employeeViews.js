@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { useHistory } from "react-router-dom";
+import {  useHistory } from "react-router-dom";
+import moment from 'moment'
 
 function EmployeeViews() {
     const [shifts, setShifts] = useState([]);
@@ -27,24 +28,21 @@ function EmployeeViews() {
     }
 
 
-    return (
-        <div className="content-wrap">
-            <div className="shifts">
-                <h1>Scheduled Shifts</h1><hr />
-                <br></br>
-                {shifts.map((val, key) => {
-                    return (
-                        <div className="shift">
-                            <div className="shift-details">
-                                <h2 class="shift-tile-pay">${val.minPay}.00 + tips</h2>
-                                <h3 class="shift-tile-date">Date: {val.date}</h3>
-                                <h3>Position: {val.title} @ {val.createdBy} </h3>
-                                <h3>Address: {val.location}</h3>
-                                <h3>Time: {val.time}</h3>
-
-                            </div>
-
-                            <button class="btn-action" onClick={() => dropShift(val.shiftID)}>Drop Shift</button>
+    return(
+    <div className="content-wrap">
+        <div className="shifts">
+            <h1>Scheduled Shifts</h1><hr/>
+            <br></br>
+            {shifts.map((val,key) =>
+            {
+                return (
+                    <div className="shift">
+                        <div className="shift-details">
+                            <h2>${val.minPay}.00 + tips</h2>
+                            <h3>position: {val.title} @ {val.createdBy} </h3>
+                            <h3>address: {val.location}</h3>
+                            <h3>time: {moment(val.time, 'HH:mm').format('hh:mm a')}</h3>
+                            <h3>date: {val.date}</h3>
                         </div>
 
                     )
