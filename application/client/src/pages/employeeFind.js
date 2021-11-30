@@ -9,31 +9,30 @@ function EmployeeFind() {
     let history = useHistory();
 
     useEffect(() => {
-    axios.get("/api/getAllShifts")
-    .then((response) => {
-        setShifts(response.data);
-        console.log(shifts)
-        })
+        axios.get("/api/getAllShifts")
+            .then((response) => {
+                setShifts(response.data);
+                console.log(shifts)
+            })
     }, []);
 
     const claimShift = (id) => {
-        axios.put("/api/claimShift", {id: id})
-        .then((response) => {
-            if(response) {
-                history.go(0)
-            }
-        })
+        axios.put("/api/claimShift", { id: id })
+            .then((response) => {
+                if (response) {
+                    history.go(0)
+                }
+            })
     }
 
-      return(
+    return (
         <div className="content-wrap">
             <div>
                 <h1>BROWSE AVAILABLE SHIFTS</h1>
-                <hr/>
+                <hr />
             </div>
             <div className="available-shifts">
-                    {shifts.map((val,key) =>
-                {
+                {shifts.map((val, key) => {
                     return (
                         <div className="shift">
                             <div>
@@ -45,7 +44,7 @@ function EmployeeFind() {
                             </div>
 
                             <div>
-                                <button className="btn-submit" onClick={()=> claimShift(val.shiftID)}>Claim</button>
+                                <button class="btn-claim-shift" onClick={() => claimShift(val.shiftID)}>Claim</button>
                             </div>
                         </div>
 
@@ -53,7 +52,7 @@ function EmployeeFind() {
                 })}
             </div>
         </div>
-      );
+    );
 }
 
 export default EmployeeFind;

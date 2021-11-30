@@ -9,13 +9,13 @@ function EmployerViews() {
     let history = useHistory();
 
     useEffect(() => {
-    const data = localStorage.getItem("username")
+        const data = localStorage.getItem("username")
 
-    axios.post("/api/getShifts", {
-        username: JSON.parse(data)
-    }).then((response) => {
-        setShifts(response.data);
-        console.log(shifts)
+        axios.post("/api/getShifts", {
+            username: JSON.parse(data)
+        }).then((response) => {
+            setShifts(response.data);
+            console.log(shifts)
         })
     }, []);
 
@@ -34,18 +34,17 @@ function EmployerViews() {
 
     const deleteShift = (id) => {
         axios.delete(`/api/deleteShift/${id}`).then((response) => {
-          if(response){
-            history.go(0);
-          }
+            if (response) {
+                history.go(0);
+            }
         });
-      };
+    };
 
-      return(
+    return (
         <div className="content-wrap">
-            <h1>Unclaimed Shifts</h1><hr/>
+            <h1>Unclaimed Shifts</h1><hr />
             <div className="shift-list">
-                {shifts.map((val,key) =>
-                {
+                {shifts.map((val, key) => {
                     return (
                         <div id={val.shiftID} key={key} className="shift">
                             <div className="list-details">
@@ -56,8 +55,8 @@ function EmployerViews() {
                                 <h3>address: {val.location}</h3>
                             </div>
                             <div className="card-actions">
-                                <button className="btn-action" onClick={()=> editShyftHandler(val.shiftID)}>Edit</button>
-                                <button className="btn-action" onClick={()=> deleteShift(val.shiftID)}>Delete</button>
+                                <button className="btn-edit" onClick={() => editShyftHandler(val.shiftID)}>Edit</button>
+                                <button className="btn-action" onClick={() => deleteShift(val.shiftID)}>Delete</button>
                             </div>
                         </div>
 
@@ -65,7 +64,7 @@ function EmployerViews() {
                 })}
             </div>
         </div>
-      );
+    );
 }
 
 export default EmployerViews;

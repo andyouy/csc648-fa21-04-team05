@@ -9,22 +9,22 @@ function EmployeeViews() {
     let history = useHistory();
 
     useEffect(() => {
-    const data = localStorage.getItem("username")
-    axios.post("/api/getClaimedShifts", {
-        username: JSON.parse(data)
-    }).then((response) => {
-        setShifts(response.data);
-        console.log(shifts)
+        const data = localStorage.getItem("username")
+        axios.post("/api/getClaimedShifts", {
+            username: JSON.parse(data)
+        }).then((response) => {
+            setShifts(response.data);
+            console.log(shifts)
         })
     }, []);
 
     const dropShift = (id) => {
-        axios.put("/api/dropShift", {id: id})
-        .then((response) => {
-            if(response) {
-                history.go(0)
-            }
-        })
+        axios.put("/api/dropShift", { id: id })
+            .then((response) => {
+                if (response) {
+                    history.go(0)
+                }
+            })
     }
 
 
@@ -45,14 +45,11 @@ function EmployeeViews() {
                             <h3>date: {val.date}</h3>
                         </div>
 
-                        <button onClick={()=> dropShift(val.shiftID)}>Drop Shift</button>
-                    </div>
-
-                )
-            })}
+                    )
+                })}
+            </div>
         </div>
-    </div>
-      );
+    );
 }
 
 export default EmployeeViews;
