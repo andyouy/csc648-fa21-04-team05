@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import {  useHistory, useParams } from "react-router-dom";
 import axios from 'axios';
+import moment from 'moment'
 
 function EditShyft(){
 
@@ -54,7 +55,7 @@ function EditShyft(){
             setShiftTitle(response.data.title);
             setLocation(response.data.location);
             setTime(response.data.time);
-            setDate(response.data.date);
+            setDate(moment(response.data.date).format('YYYY-MM-DD'));
             setMinPay(response.data.minPay);
             })
         }, []);
@@ -101,6 +102,7 @@ function EditShyft(){
             name="Date"
             placeholder="Date"
             type='date'
+            value={date}
             onChange={e => setDate(e.target.value)}
             />
         </label>

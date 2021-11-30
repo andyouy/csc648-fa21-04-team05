@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import {  useHistory } from "react-router-dom";
-import EditShyft from "./editShyft";
+import moment from 'moment';
 
 function EmployerViews() {
     const [shifts, setShifts] = useState([]);
@@ -52,7 +52,7 @@ function EmployerViews() {
                                 <p>date: {val.date}</p>
                                 <h2>${val.minPay}.00</h2>
                                 <h3>seeking: {val.title} @ {val.createdBy}</h3>
-                                <h3>start time: {val.time}</h3>
+                                <h3>start time: {moment(val.time, 'HH:mm').format('hh:mm a')}</h3>
                                 <h3>address: {val.location}</h3>
                             </div>
                             <div className="card-actions">

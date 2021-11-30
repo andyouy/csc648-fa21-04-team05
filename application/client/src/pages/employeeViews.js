@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import {  useHistory } from "react-router-dom";
+import moment from 'moment'
 
 function EmployeeViews() {
     const [shifts, setShifts] = useState([]);
@@ -40,7 +41,7 @@ function EmployeeViews() {
                             <h2>${val.minPay}.00 + tips</h2>
                             <h3>position: {val.title} @ {val.createdBy} </h3>
                             <h3>address: {val.location}</h3>
-                            <h3>time: {val.time}</h3>
+                            <h3>time: {moment(val.time, 'HH:mm').format('hh:mm a')}</h3>
                             <h3>date: {val.date}</h3>
                         </div>
 

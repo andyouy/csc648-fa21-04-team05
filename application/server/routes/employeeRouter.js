@@ -84,6 +84,20 @@ router.post('/api/getClaimedShifts', (req, res) => {
     })
 })
 
+//claims shifts
+router.put('/api/claimShift', (req, res) => {
+    const id = req.body.id;
+    Shifts.update(
+        {claimedBy: req.session.username},
+        {where: {shiftID: id}}
+    ).then((results) => {
+        if(results){
+            console.log(results)
+            res.status(200).json("Successfully claimed")
+        }
+    })
+})
+
 router.put('/api/dropShift', (req, res) => {
     const id = req.body.id;
     Shifts.update(
