@@ -1,7 +1,11 @@
 # CSC648-fa21-04-team05 Repository
 
 ## Application URL: 
+<<<<<<< HEAD
 http://ec2-54-183-209-129.us-west-1.compute.amazonaws.com/ 
+=======
+http://ec2-54-183-209-129.us-west-1.compute.amazonaws.com/
+>>>>>>> dev
 
 ## Please do the following steps before completing Milestone 0.
 1. Change the name of the repository of csc648-fa21-SectionName-teamNN. 

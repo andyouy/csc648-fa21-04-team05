@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import {  useHistory } from "react-router-dom";
 import axios from 'axios';
+import moment from 'moment';
 
 function CreateShyft(){
 
@@ -14,11 +15,13 @@ function CreateShyft(){
     // NEW a/o 11/11
 
     // add error handling
+    const [error, setError] = useState('');
 
     let history = useHistory();
 
     const submitHandler = async (e) => {
         e.preventDefault();
+        console.log(date)
         axios.post(`/api/newShift`, {
             shiftTitle,
             location,
@@ -29,50 +32,18 @@ function CreateShyft(){
         .then(response => {
             if(response){
                 // refreshes page on click
-                history.go(0);
+                history.push("/employerViews")
                 // return list;
+            }
+        })
+        .catch(error => {
+            console.log(error.response.data)
+            if(error.response.data === "fields empty"){
+                setError("Please fill out all fields")
             }
         });
     }
 
-    // const DeleteHandler = async (e) => {
-    //     axios.delete(`/deleteShift`, {
-    //         shiftTitle,
-    //         location,
-    //         time,
-    //         date,
-    //     });
-    //    }
-
-    //    const ViewHandler = async (e) => {
-    //     axios.put(`/viewShift`, {
-    //         shiftTitle,
-    //         location,
-    //         time,
-    //         date,
-    //     });
-    //   }
-
-
-    // var list = Shifts.map(function(shift){
-    // return(
-    //     <div className="content-wrap">
-    //     <h1>Current Shifts</h1> 
-    //     {shift.data.map(item => 
-    //         <div class="card">
-    //             <div id="shiftTitle">Shift Title: {item.Title}</div>
-    //             <div id="shiftLocation">Location: {item.Location}</div>
-    //             <div id="shiftTime">Time: {item.Time}</div>
-    //             <div id="shiftDate">Date: {item.Date}</div>
-
-    //             <form onSubmit={DeleteHandler}><button type ='submit' id='view'>Delete Shift</button></form>
-    //             <form onSubmit={ViewHandler}><button type ='submit' id='view'>Delete Shift</button></form>
-                
-    //         </div>
-    //     )}
-    //     </div>
-    // )
-    // })
       
     return(
     <div className="content-wrap">
@@ -115,7 +86,7 @@ function CreateShyft(){
             name="Date"
             placeholder="Date"
             type='date'
-            onChange={e => setDate(e.target.value)}
+            onChange={e => setDate(moment(e.target.value).format('MM/DD/YYYY'))}
             />
         </label>
         <label>
@@ -138,7 +109,7 @@ function CreateShyft(){
             />
         </label>
     <button className="btn btn-submit">Create Shift</button>
-    <p>user interface response</p>
+    {error ? <p style={{color: "red"}}>{error}</p> : null}
     </form>
     </div>
 )
