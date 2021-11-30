@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { useHistory } from "react-router-dom";
-import EditShyft from "./editShyft";
+import {  useHistory } from "react-router-dom";
+import moment from 'moment';
 
 function EmployerViews() {
     const [shifts, setShifts] = useState([]);
@@ -48,11 +48,11 @@ function EmployerViews() {
                     return (
                         <div id={val.shiftID} key={key} className="shift">
                             <div className="list-details">
-                                <h2 className="shift-tile-pay">${val.minPay}.00</h2>
-                                <h3 className="shift-tile-date">Date: {val.date}</h3>
-                                <h3>Seeking: {val.title} @ {val.createdBy}</h3>
-                                <h3>Start Time: {val.time}</h3>
-                                <h3>Address: {val.location}</h3>
+                                <p>date: {val.date}</p>
+                                <h2>${val.minPay}.00</h2>
+                                <h3>seeking: {val.title} @ {val.createdBy}</h3>
+                                <h3>start time: {moment(val.time, 'HH:mm').format('hh:mm a')}</h3>
+                                <h3>address: {val.location}</h3>
                             </div>
                             <div className="card-actions">
                                 <button className="btn-edit" onClick={() => editShyftHandler(val.shiftID)}>Edit</button>
