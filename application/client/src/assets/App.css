@@ -100,7 +100,7 @@ button:active {
 form {
   width: 50%;
   max-width: 80vh;
-  min-width: 50vh;
+  min-width: 40vh;
   box-shadow: 0 0 10px 0 rgba(211, 211, 211, 0.212);
   border-radius: 15px;
   border-color: whitesmoke;
