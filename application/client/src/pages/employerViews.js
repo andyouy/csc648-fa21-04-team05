@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import {  useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import EditShyft from "./editShyft";
 
 function EmployerViews() {
@@ -9,13 +9,13 @@ function EmployerViews() {
     let history = useHistory();
 
     useEffect(() => {
-    const data = localStorage.getItem("username")
+        const data = localStorage.getItem("username")
 
-    axios.post("/api/getShifts", {
-        username: JSON.parse(data)
-    }).then((response) => {
-        setShifts(response.data);
-        console.log(shifts)
+        axios.post("/api/getShifts", {
+            username: JSON.parse(data)
+        }).then((response) => {
+            setShifts(response.data);
+            console.log(shifts)
         })
     }, []);
 
@@ -34,30 +34,29 @@ function EmployerViews() {
 
     const deleteShift = (id) => {
         axios.delete(`/api/deleteShift/${id}`).then((response) => {
-          if(response){
-            history.go(0);
-          }
+            if (response) {
+                history.go(0);
+            }
         });
-      };
+    };
 
-      return(
+    return (
         <div className="content-wrap">
-            <h1>Unclaimed Shifts</h1><hr/>
+            <h1>Unclaimed Shifts</h1><hr />
             <div className="shift-list">
-                {shifts.map((val,key) =>
-                {
+                {shifts.map((val, key) => {
                     return (
                         <div id={val.shiftID} key={key} className="shift">
                             <div className="list-details">
-                                <p>date: {val.date}</p>
-                                <h2>${val.minPay}.00</h2>
-                                <h3>seeking: {val.title} @ {val.createdBy}</h3>
-                                <h3>start time: {val.time}</h3>
-                                <h3>address: {val.location}</h3>
+                                <h2 className="shift-tile-pay">${val.minPay}.00</h2>
+                                <h3 className="shift-tile-date">Date: {val.date}</h3>
+                                <h3>Seeking: {val.title} @ {val.createdBy}</h3>
+                                <h3>Start Time: {val.time}</h3>
+                                <h3>Address: {val.location}</h3>
                             </div>
                             <div className="card-actions">
-                                <button className="btn-action" onClick={()=> editShyftHandler(val.shiftID)}>Edit</button>
-                                <button className="btn-action" onClick={()=> deleteShift(val.shiftID)}>Delete</button>
+                                <button className="btn-edit" onClick={() => editShyftHandler(val.shiftID)}>Edit</button>
+                                <button className="btn-action" onClick={() => deleteShift(val.shiftID)}>Delete</button>
                             </div>
                         </div>
 
@@ -65,7 +64,7 @@ function EmployerViews() {
                 })}
             </div>
         </div>
-      );
+    );
 }
 
 export default EmployerViews;
