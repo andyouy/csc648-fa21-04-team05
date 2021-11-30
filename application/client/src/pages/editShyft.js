@@ -101,6 +101,7 @@ function EditShyft(){
             name="Date"
             placeholder="Date"
             type='date'
+            value={date}
             onChange={e => setDate(e.target.value)}
             />
         </label>
