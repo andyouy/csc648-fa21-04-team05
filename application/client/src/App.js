@@ -28,6 +28,8 @@ import FindShyft from './pages/findShyft';
 import EmployeeFind from './pages/employeeFind';
 import EmployeeViews from './pages/employeeViews';
 import EmployerViews from './pages/employerViews';
+import EditShyft from './pages/editShyft';
+import ProfilePage from './pages/profilePage';
 
 
 function App() {
@@ -62,7 +64,7 @@ function App() {
     <div className="page-container">
     
       <Router>
-        <Navbar loggedIn={loggedIn} updateUserState={updateUserState} updateLoginState={updateLoginState} />
+        <Navbar loggedIn={loggedIn} loggedInUser={loggedInUser} updateUserState={updateUserState} updateLoginState={updateLoginState} />
 
         <Switch>
           <Route path='/' exact component={Home} />
@@ -88,6 +90,9 @@ function App() {
           <Route path='/employeeViews' component={EmployeeViews}></Route>
           <Route path='/employeeFind' component={EmployeeFind}></Route>
           <Route path='/employerViews' component={EmployerViews}></Route>
+
+          <Route path='/editShyft/:id' component={EditShyft}></Route>
+          <Route path='/userProfile/:username' component={ProfilePage}></Route>
 
 
         </Switch>

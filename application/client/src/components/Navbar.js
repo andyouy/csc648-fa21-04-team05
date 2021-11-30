@@ -3,9 +3,9 @@ import {  Link } from "react-router-dom";
 import axios from 'axios';
 import {  useHistory } from "react-router-dom";
 
-const Navbar = ({loggedIn, updateUserState, updateLoginState}) => {
+const Navbar = ({loggedIn, updateUserState, updateLoginState, loggedInUser}) => {
 
-    let history = useHistory;
+    let history = useHistory();
 
     const logoutHandler = () => {
         axios.post("/api/logout", {withCredentials: true}).then((response) =>{
@@ -19,6 +19,11 @@ const Navbar = ({loggedIn, updateUserState, updateLoginState}) => {
     
       }
           
+      const profileHandler = () => {
+        history.push(`/userProfile/${loggedInUser}`)
+      }
+
+
     return(
       
       <nav className="navbar">     
@@ -35,6 +40,11 @@ const Navbar = ({loggedIn, updateUserState, updateLoginState}) => {
         <ul className="navbar-nav">
           {!loggedIn ? <Link to="/login">Login</Link> : <Link to="/" onClick={logoutHandler}> Logout</Link>}
         </ul>
+
+        <ul className="navbar-nav">
+          {loggedIn ? <a onClick={profileHandler}>My Profile</a> : null}
+        </ul>
+
 
           {/* TEST */}
         {/* <ul><Link to="/employerDashboard">[TEST] Employer Dashboard</Link></ul>
