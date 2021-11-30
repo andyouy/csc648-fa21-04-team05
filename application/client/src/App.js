@@ -29,7 +29,7 @@ import EmployeeFind from './pages/employeeFind';
 import EmployeeViews from './pages/employeeViews';
 import EmployerViews from './pages/employerViews';
 import EditShyft from './pages/editShyft';
-import ProfilePage from './pages/profilePage';
+import ProfilePage from './pages/editProfile';
 
 
 function App() {
