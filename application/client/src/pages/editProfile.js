@@ -23,7 +23,6 @@ function ProfilePage() {
     const submitHandler = async (e) => {
         e.preventDefault();
         axios.put(`/api/editProfile`, {
-            id,
             email,
             userID,
             password,
@@ -52,7 +51,7 @@ function ProfilePage() {
             id: id
         })
             .then((response) => {
-                setFullName(response.data.fullName)
+                setName(response.data.name)
                 setEmail(response.data.email)
                 setUserID(response.data.id)
                 setPhoneNumber(response.data.id)
@@ -75,7 +74,7 @@ function ProfilePage() {
                     placeholder="Name"
                     type='text'
                     value={fullName}
-                    onChange={e => setFullName(e.target.value)}
+                    onChange={e => setName(e.target.value)}
                     disabled
                 />
             </label>
