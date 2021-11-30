@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { useHistory } from "react-router-dom";
+import {  useHistory } from "react-router-dom";
+import moment from 'moment'
 
 function EmployeeFind() {
     const [shifts, setShifts] = useState([]);
@@ -35,11 +36,11 @@ function EmployeeFind() {
                     return (
                         <div className="shift">
                             <div>
-                                <h2 class="shift-tile-pay">${val.minPay}.00</h2>
-                                <h3 class="shift-tile-date">Date: {val.date}</h3>
-                                <h3>Seeking: {val.title} @ {val.createdBy}</h3>
-                                <h3>Start Time: {val.time}</h3>
-                                <h3>Address: {val.location}</h3>
+                                <h3>date: {val.date}</h3>
+                                <h2>${val.minPay}.00</h2>
+                                <h3>seeking: {val.title} @ {val.createdBy}</h3>
+                                <h3>start time: {moment(val.time, 'HH:mm').format('hh:mm a')}</h3>
+                                <h3>address: {val.location}</h3>
                             </div>
 
                             <div>

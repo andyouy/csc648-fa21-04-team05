@@ -24,7 +24,6 @@ import CreateEmployeeAccount from './pages/employeeAccount';
 import CreateEmployerAccount from './pages/employerAccount';
 import Jaguar from './pages/AboutUs/Jaguar';
 import CreateShyft from './pages/createShyft';
-import FindShyft from './pages/findShyft';
 import EmployeeFind from './pages/employeeFind';
 import EmployeeViews from './pages/employeeViews';
 import EmployerViews from './pages/employerViews';
@@ -84,8 +83,7 @@ function App() {
           <Route path='/employerDashboard' component={EmployerDashboard}></Route>
           <Route path='/employeeDashboard' component={EmployeeDashboard}></Route>
           <Route path='/createShyft' component={CreateShyft}></Route>
-          <Route path='/findShyft' component={FindShyft}></Route>
-          {/* <Route path='/shyfts' component={Shyfts}></Route> */}
+
 
           <Route path='/employeeViews' component={EmployeeViews}></Route>
           <Route path='/employeeFind' component={EmployeeFind}></Route>

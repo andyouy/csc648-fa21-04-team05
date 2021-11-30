@@ -177,11 +177,11 @@ label {
   float: left;
   text-align: left;
   width: 100%; 
+  margin-top: 1rem;
 }
 
 input {
   width: 100%;
-  margin-bottom: 2vh;
 
 }
 
@@ -251,4 +251,10 @@ input {
   background-color: hsla(0, 0%, 0%, 0.801);
   color: whitesmoke;
   border-top: 8px solid #7991B2;
+}
+
+.error{
+  float: left;
+  margin: 0;
+  color:red;
 }
