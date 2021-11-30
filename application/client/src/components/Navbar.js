@@ -18,6 +18,25 @@ const Navbar = ({loggedIn, updateUserState, updateLoginState, loggedInUser}) => 
         });
     
       }
+
+      const dashboardHandler = () => {
+        const data = localStorage.getItem("username")
+        console.log(loggedInUser)
+
+        if(data === null) {
+          history.push("/");
+        }else{
+          axios.post("/api/getLoggedIn", {
+            username: JSON.parse(data)
+          }).then(response => {
+            if(response.data === 0){
+              history.push("/employeeDashboard")
+            } else{
+              history.push("/employerDashboard")
+            }
+          })
+        }
+      }
           
       const profileHandler = () => {
         history.push(`/userProfile/${loggedInUser}`)
@@ -43,6 +62,10 @@ const Navbar = ({loggedIn, updateUserState, updateLoginState, loggedInUser}) => 
 
         <ul className="navbar-nav">
           {loggedIn ? <a onClick={profileHandler}>My Profile</a> : null}
+        </ul>
+
+        <ul className="navbar-nav">
+          {loggedIn ? <a onClick={dashboardHandler}>My Dashboard</a> : null}
         </ul>
 
 
