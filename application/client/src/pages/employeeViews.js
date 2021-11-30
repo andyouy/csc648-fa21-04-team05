@@ -45,11 +45,15 @@ function EmployeeViews() {
                             <h3>date: {val.date}</h3>
                         </div>
 
-                    )
-                })}
-            </div>
+                        <button onClick={()=> dropShift(val.shiftID)}>Drop Shift</button>
+                    </div>
+
+                )
+            })}
         </div>
+    </div>
     );
+
 }
 
 export default EmployeeViews;
