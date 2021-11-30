@@ -28,7 +28,6 @@
 | Database Username | csc648team5 |
 |Database Password  | csc648team5 |
 
-
 ### SSH into EC2 server (Amazon Linux 2 AMI, changed from Ubuntu because of EC2 support options and free pricing):
 
 - Open an SSH client.
