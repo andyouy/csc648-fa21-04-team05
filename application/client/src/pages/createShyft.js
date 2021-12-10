@@ -90,6 +90,15 @@ function CreateShyft(){
             />
         </label>
         <label>
+            Shift Length:
+            <input
+            name="Shift Length (estimated)"
+            placeholder="hours"
+            type='text'
+            onChange={e => setDate(e.target.value)}
+            />
+        </label>
+        <label>
             Base: $
             <input
             name="pay"
