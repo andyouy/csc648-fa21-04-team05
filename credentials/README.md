@@ -35,7 +35,10 @@
 - Run this command, if necessary, to ensure your key is not publicly viewable: **chmod 400 csc648new.pem**
 - Connect to your instance using its Public DNS (make sure the path to .pem file is correct, ours was in the same directory when using terminal):  
 **ssh -i "csc648new.pem" ubuntu@ec2-54-183-209-129.us-west-1.compute.amazonaws.com**
+<<<<<<< HEAD
+=======
 
+>>>>>>> dev
 
 ### Database Access:
 This is a MySQL database (Version ​​8.0.21) built with Amazon RDS. It is linked to the EC2 server above via a shared VPC configuration. To connect to the database, install MySQL Workbench (preferably any version about 8.0.20) and ‘create connection’. For the connection method, select standard TCP/IP over SSH, fill in the information above. There is no SSH Password (empty). SSH Key file is used instead which is linked above in the credentials folder of the repository. Also see Milestone 0 submission for a detailed illustration to fill in credentials if need be.

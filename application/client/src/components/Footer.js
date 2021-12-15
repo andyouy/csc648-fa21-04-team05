@@ -1,12 +1,15 @@
 ﻿import React from 'react';
+import {  Link } from "react-router-dom";
 import "../assets/App.css"
 
 const Footer = () => {
     return (
         <div className="main-footer">
-            <p classname="col">
+            <p className="copyright">
                 Copyright &copy; 2021 Shyft, Inc. All rights reserved.
             </p>
+
+            <Link className="about-us" to="/aboutUs">About Us</Link>       
 
         </div>
         // <footer>

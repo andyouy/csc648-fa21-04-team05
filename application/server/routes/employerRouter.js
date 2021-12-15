@@ -3,6 +3,7 @@ const router = express.Router();
 var bcrypt = require('bcrypt');
 const Users = require("../models/Users");
 const Shifts = require("../models/Shifts");
+const sequelize = require('../config/database');
 
 const regex = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W)/;
 router.post('/api/newEmployerAccount', (req, res) => { 
@@ -73,6 +74,7 @@ router.post('/api/newEmployerAccount', (req, res) => {
                 location: req.body.location,
                 time: req.body.time,
                 date: req.body.date,
+                length: req.body.length,
                 createdBy: req.session.realname,
                 minPay: req.body.minPay
             })
@@ -135,6 +137,22 @@ router.put('/api/editShift', (req, res) => {
             console.log(results)
             res.status(200).json("Successfully edited")
         }
+    })
+})
+
+router.post('/api/getRecentShifts', (req, res) => {
+    Shifts.findAll(
+        {
+            order: [['createdAt', 'DESC']],
+            limit: 9,
+            where:
+            {
+                claimedBy: null
+            }
+        },
+    ).then((results) => {
+        console.log(results)
+        res.status(200).json(results)
     })
 })
  module.exports = router;
