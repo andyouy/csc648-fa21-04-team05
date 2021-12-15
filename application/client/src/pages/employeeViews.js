@@ -42,6 +42,7 @@ function EmployeeViews() {
                             <h3>position: {val.title} @ {val.createdBy} </h3>
                             <h3>address: {val.location}</h3>
                             <h3>time: {moment(val.time, 'HH:mm').format('hh:mm a')}</h3>
+                            <h3>length: {val.length} hours</h3>
                             <h3>date: {val.date}</h3>
                         </div>
 
