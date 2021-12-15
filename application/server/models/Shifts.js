@@ -19,6 +19,10 @@ const Shifts = sequelize.define("shifts", {
         type: Sequelize.STRING(45),
         allowNull:false
     },
+    length: {
+        type: Sequelize.STRING(10),
+        allowNull: false
+    },
     date: {
         type: Sequelize.STRING(45),
         allowNull: false
@@ -36,11 +40,6 @@ const Shifts = sequelize.define("shifts", {
         allowNull: true
     }
 
-},
-    {
-        createdAt: false,
-        updatedAt: false
-    }
-);
+});
 
 module.exports = Shifts;
