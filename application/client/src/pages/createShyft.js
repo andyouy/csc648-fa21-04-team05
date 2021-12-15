@@ -10,6 +10,7 @@ function CreateShyft(){
     const [location, setLocation] = useState('');
     const [time, setTime] = useState('');
     const [date, setDate] = useState('');
+    const [length, setLength] = useState('');
     const [minPay, setMinPay] = useState('');
     
     // NEW a/o 11/11
@@ -26,6 +27,7 @@ function CreateShyft(){
             shiftTitle,
             location,
             time,
+            length,
             date,
             minPay
         })
@@ -95,7 +97,7 @@ function CreateShyft(){
             name="Shift Length (estimated)"
             placeholder="hours"
             type='text'
-            onChange={e => setDate(e.target.value)}
+            onChange={e => setLength(e.target.value)}
             />
         </label>
         <label>
