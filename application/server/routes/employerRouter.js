@@ -4,6 +4,8 @@ var bcrypt = require('bcrypt');
 const Users = require("../models/Users");
 const Shifts = require("../models/Shifts");
 const sequelize = require('../config/database');
+var Sequelize = require('sequelize');
+const Op = Sequelize.Op;
 
 const regex = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W)/;
 router.post('/api/newEmployerAccount', (req, res) => { 
@@ -87,9 +89,27 @@ router.post('/api/newEmployerAccount', (req, res) => {
     console.log(req.session)
     Shifts.findAll({
         where: {
-            createdBy: req.session.realname
+            createdBy: req.session.realname,
+            claimedBy: null
         }
     }).then((results) => {
+        console.log(results)
+        res.status(200).json(results)
+    })
+})
+
+router.post('/api/getEmployerClaimedShifts', (req, res) => {
+    console.log(req.body);
+    console.log(req.session)
+    Shifts.findAll({
+        where: {
+            createdBy: req.session.realname,
+            claimedBy: {
+                [Op.not]: null
+            }
+        }
+    }).then((results) => {
+        console.log("here@@@@@@@@@@@@@@@@@@@@@@")
         console.log(results)
         res.status(200).json(results)
     })
