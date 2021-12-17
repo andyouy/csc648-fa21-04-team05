@@ -14,7 +14,7 @@ return(
             <Link to="/employerViews">
                 <button className="btn-choice"><span><h3>View Unclaimed</h3></span></button>
             </Link>
-            <Link to="/employeeViews">
+            <Link to="/employerShiftsClaimed">
                 <button className="btn-choice"><span><h3>View Claimed</h3></span></button>
             </Link>
     </div>

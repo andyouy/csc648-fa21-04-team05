@@ -27,8 +27,10 @@ import CreateShyft from './pages/createShyft';
 import EmployeeFind from './pages/employeeFind';
 import EmployeeViews from './pages/employeeViews';
 import EmployerViews from './pages/employerViews';
+import EmployerShiftsClaimed from './pages/employerShiftsClaimed';
 import EditShyft from './pages/editShyft';
 import ProfilePage from './pages/editProfile';
+
 
 
 function App() {
@@ -88,6 +90,7 @@ function App() {
           <Route path='/employeeViews' component={EmployeeViews}></Route>
           <Route path='/employeeFind' component={EmployeeFind}></Route>
           <Route path='/employerViews' component={EmployerViews}></Route>
+          <Route path='/employerShiftsClaimed' component={EmployerShiftsClaimed}></Route>
 
           <Route path='/editShyft/:id' component={EditShyft}></Route>
           <Route path='/userProfile/:username' component={ProfilePage}></Route>
